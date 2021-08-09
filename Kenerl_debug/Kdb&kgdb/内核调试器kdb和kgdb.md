@@ -4,9 +4,16 @@
 
 
 
+
 ## 内核编译
 
+### 内核使能kgdb
 
+
+
+### 内核使能kdb
+
+略
 
 ## 内核调试启动参数
 
@@ -73,3 +80,4 @@
 ### 原文地址
 
 [Using kgdb, kdb and the kernel debugger internals](https://www.kernel.org/doc/html/v4.15/dev-tools/kgdb.html)
+

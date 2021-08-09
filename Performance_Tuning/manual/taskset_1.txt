@@ -1,0 +1,95 @@
+TASKSET(1)                                                         User Commands                                                         TASKSET(1)
+
+NAME
+       taskset - set or retrieve a process's CPU affinity
+               - 设置或恢复CPU亲和性
+
+SYNOPSIS
+       taskset [options] mask command [argument...]
+       taskset [options] -p [mask] pid
+
+DESCRIPTION
+       taskset  is  used to set or retrieve the CPU affinity of a running process given its pid, or to launch a new command with a given CPU affin‐
+       ity.  CPU affinity is a scheduler property that "bonds" a process to a given set of CPUs on the system.  The Linux scheduler will honor  the
+       given  CPU  affinity  and the process will not run on any other CPUs.  Note that the Linux scheduler also supports natural CPU affinity: the
+       scheduler attempts to keep processes on the same CPU as long as practical for performance reasons.  Therefore, forcing a specific CPU affin‐
+       ity is useful only in certain applications.
+       taskset 用于设置或者获取给定进程号的CPU亲和性，或者以特定的CPU亲和性的运行新的命令。CPU亲和性是一种调度属性，linux调度器或倾向与在给定CPU上
+       运行命令。Linux调度器同样支持一种天然的CPU亲和性：为了性能原因调度器会尽量在同一个CPU上运行某个进程。因此，强制指定特定的CPU亲和性只在特定的
+       进程上有用。
+
+       The  CPU  affinity  is  represented as a bitmask, with the lowest order bit corresponding to the first logical CPU and the highest order bit
+       corresponding to the last logical CPU.  Not all CPUs may exist on a given system but a mask may specify  more  CPUs  than  are  present.   A
+       retrieved  mask  will  reflect  only the bits that correspond to CPUs physically on the system.  If an invalid mask is given (i.e., one that
+       corresponds to no valid CPUs on the current system) an error is returned.  The masks may be specified in  hexadecimal  (with  or  without  a
+       leading "0x"), or as a CPU list with the --cpu-list option.  For example,
+       CPU亲和性的表示方式，可以通过16进制掩码来表示；
+
+           0x00000001  is processor #0,
+
+           0x00000003  is processors #0 and #1,
+
+           0xFFFFFFFF  is processors #0 through #31,
+
+           32          is processors #1, #4, and #5,
+                       此处虽然没有加0x，依然通过16进制方式解释
+
+           --cpu-list 0-2,6
+                       is processors #0, #1, #2, and #6.
+
+       When taskset returns, it is guaranteed that the given program has been scheduled to a legal CPU.
+       taskset 返回是，程序确保给定的进程已经调度到一个合法的CPU上了。
+
+OPTIONS
+       -a, --all-tasks
+              Set or retrieve the CPU affinity of all the tasks (threads) for a given PID.
+	      设置或者恢复给定PID的所有任务(线程)的CPU亲和性
+	      TODO: 意思是如果一个进程中有多个线程，通过taskset默认只会修改主线程，不会修改其他线程？
+
+       -c, --cpu-list
+              Interpret  mask  as  numerical list of processors instead of a bitmask.  Numbers are separated by commas and may include ranges.  For
+              example: 0,5,8-11.
+
+       -p, --pid
+              Operate on an existing PID and do not launch a new task.
+	      操作一个已经存在的PID，并不启动新的任务。
+
+       -V, --version
+              Display version information and exit.
+
+       -h, --help
+              Display help text and exit.
+
+USAGE
+       The default behavior is to run a new command with a given affinity mask:
+              taskset mask command [arguments]
+
+       You can also retrieve the CPU affinity of an existing task:
+       可以通过下面的方式获取给定进程的CPU亲和性:
+              taskset -p pid
+
+       Or set it:
+              taskset -p mask pid
+
+PERMISSIONS
+       A user can change the CPU affinity of a process belonging to the same user.  A user must possess CAP_SYS_NICE to change the CPU affinity  of
+       a process belonging to another user.  A user can retrieve the affinity mask of any process.
+       用户只能改变属于自己的进程的CPU亲和性；如果用户想要改变其他用户进程的CPU亲和性必须要有CAP_SYS_NICE 权限；用户可以获取其他用户进程的CPU亲和i
+       性.
+
+SEE ALSO
+       chrt(1), nice(1), renice(1), sched_getaffinity(2), sched_setaffinity(2)
+
+       See sched(7) for a description of the Linux scheduling scheme.
+
+AUTHOR
+       Written by Robert M. Love.
+
+COPYRIGHT
+       Copyright  ©  2004  Robert  M. Love.  This is free software; see the source for copying conditions.  There is NO warranty; not even for MER‐
+       CHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+AVAILABILITY
+       The taskset command is part of the util-linux package and is available from https://www.kernel.org/pub/linux/utils/util-linux/.
+
+util-linux                                                          August 2014                                                          TASKSET(1)
