@@ -37,7 +37,6 @@ sudo apt-get install systemtap
 ### 冒烟测试
 
 ```bash
-jian
 $ cat hello-world.stp
 probe begin
 {
@@ -166,8 +165,6 @@ probe timer.ms(4000)
 ```
 
 目测应该是统计`netfilter ipv4 pre` 接收到的源地址、目的地址报文的报文数和报文长度，4000ms之后结束。
-
-
 
 
 
