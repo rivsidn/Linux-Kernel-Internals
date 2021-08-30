@@ -1180,6 +1180,7 @@ Options for function_graph tracer:
 
   funcgraph-cpu - When set, the CPU number of the CPU where the trace
 		  occurred is displayed.
+		  设置之后会显示CPU号
 
   funcgraph-overhead - When set, if the function takes longer than
 		       A certain amount, then a delay marker is
@@ -1431,9 +1432,6 @@ preemptoff 追踪器跟踪关闭抢占的地方，记录最大延迟.
  => irq_exit
  => do_IRQ
  => ret_from_intr
-
-
-##HERE
 
 This has some more changes. Preemption was disabled when an
 interrupt came in (notice the 'h'), and was enabled on exit.
@@ -1714,6 +1712,7 @@ One common case that people are interested in tracing is the
 time it takes for a task that is woken to actually wake up.
 Now for non Real-Time tasks, this can be arbitrary. But tracing
 it none the less can be interesting. 
+用于追踪任务从唤醒到真正执行用了多长时间.
 
 Without function tracing:
 
@@ -1754,6 +1753,7 @@ ran.
 
 Non Real-Time tasks are not that interesting. A more interesting
 trace is to concentrate only on Real-Time tasks.
+非实时的任务并非那么有趣，更有趣的是追踪实时任务.
 
 wakeup_rt
 ---------
@@ -1766,6 +1766,7 @@ also important to know the scheduling latency of non-RT tasks,
 but the average schedule latency is better for non-RT tasks.
 Tools like LatencyTop are more appropriate for such
 measurements.
+非实时任务关心平均延迟，实时任务关系最大延迟.
 
 Real-Time environments are interested in the worst case latency.
 That is the longest latency it takes for something to happen,
@@ -1944,17 +1945,21 @@ Doing the same with chrt -r 5 and function-trace set.
 
 This isn't that big of a trace, even with function tracing enabled,
 so I included the entire trace.
+这没什么大不了的，即使是能了function tracing，所以我包含了整个trace.
 
 The interrupt went off while when the system was idle. Somewhere
 before task_woken_rt() was called, the NEED_RESCHED flag was set,
 this is indicated by the first occurrence of the 'N' flag.
 
 Latency tracing and events
+延时追踪和事件
 --------------------------
 As function tracing can induce a much larger latency, but without
 seeing what happens within the latency it is hard to know what
 caused it. There is a middle ground, and that is with enabling
 events.
+函数追踪可能会造成巨大延迟，但是不查看延迟过程中发生了什么可能会很难
+知道是什么原因导致的延迟。这里有一处中间地带，那就是使能事件.
 
  # echo 0 > options/function-trace
  # echo wakeup_rt > current_tracer
@@ -1996,6 +2001,7 @@ events.
 
 
 Hardware Latency Detector
+硬件延迟探测
 -------------------------
 
 The hardware latency detector is executed by enabling the "hwlat" tracer.
@@ -2036,10 +2042,12 @@ interrupts disabled 'd'. Under the FUNCTION title there is:
       the two timestamps is the "inner latency" and the latency detected
       after the previous timestamp and the next timestamp in the loop is
       the "outer latency".
+      内部延迟，外部延迟
 
  ts:1499801089.066141940
 
       The absolute timestamp that the event happened.
+      事件发生的绝对时间戳.
 
  nmi-total:4 nmi-count:1
 
@@ -2062,10 +2070,12 @@ hwlat files:
 
   hwlat_detector/width - The length of time the test runs with interrupts
 			 disabled.
+			 测试运行的时间长度
 
   hwlat_detector/window - The length of time of the window which the test
 			  runs. That is, the test will run for "width"
 			  microseconds per "window" microseconds
+			  测试运行的时间窗长度
 
   tracing_cpumask - When the test is started. A kernel thread is created that
 		    runs the test. This thread will alternate between CPUs
@@ -2073,8 +2083,10 @@ hwlat files:
 		    (one "window"). To limit the test to specific CPUs
 		    set the mask in this file to only the CPUs that the test
 		    should run on.
+		    追踪CPU掩码
 
 function
+函数
 --------
 
 This tracer is the function tracer. Enabling the function tracer
@@ -2134,10 +2146,12 @@ int main(int argc, char *argv[]) {
 
 
 Single thread tracing
+单线程跟踪
 ---------------------
 
 By writing into set_ftrace_pid you can trace a
 single thread. For example:
+通过设置set_ftrace_pid 可以追踪单线程，比如:
 
 # cat set_ftrace_pid
 no pid
@@ -2171,6 +2185,7 @@ no pid
 
 If you want to trace a function when executing, you could use
 something like this simple program:
+想要追踪一个正在执行的程序，可以通过一个简单的程序来实现:
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -2226,6 +2241,8 @@ const char *tracing_file(const char *file_name)
        return trace_file;
 }
 
+//通过一个主进程，创建一个子进程
+//在子进程中调用可执行程序，执行接下来的动作
 int main (int argc, char **argv)
 {
         if (argc < 1)
@@ -2257,6 +2274,7 @@ int main (int argc, char **argv)
 }
 
 Or this simple script!
+或者通过这个简单的脚本来实现!
 
 ------
 #!/bin/bash
@@ -2272,6 +2290,7 @@ exec "$@"
 
 
 function graph tracer
+函数图追踪器
 ---------------------------
 
 This tracer is similar to the function tracer except that it
@@ -2286,7 +2305,9 @@ Probing on both ends of a function leads to special features
 such as:
 
 - measure of a function's time execution
+  统计函数的调用时间
 - having a reliable call stack to draw function calls graph
+  可以画出函数的调用图
 
 This tracer is useful in several situations:
 
@@ -2299,9 +2320,11 @@ This tracer is useful in several situations:
 
 - you want to find quickly which path is taken by a specific
   function
+  想要快速查找出特定函数的执行路径
 
 - you just want to peek inside a working kernel and want to see
   what happens there.
+  查看一个正在工作的内核在做哪些动作
 
 # tracer: function_graph
 #
@@ -2338,6 +2361,8 @@ want, depending on your needs.
 	hide: echo nofuncgraph-cpu > trace_options
 	show: echo funcgraph-cpu > trace_options
 
+	设置之后会显示CPU号
+
 - The duration (function's time of execution) is displayed on
   the closing bracket line of a function or on the same line
   than the current function in case of a leaf one. It is default
@@ -2345,6 +2370,8 @@ want, depending on your needs.
 
 	hide: echo nofuncgraph-duration > trace_options
 	show: echo funcgraph-duration > trace_options
+
+	显示函数执行时间
 
 - The overhead field precedes the duration field in case of
   reached duration thresholds.
@@ -2400,9 +2427,12 @@ want, depending on your needs.
   @ means that the function exceeded 100 msecs.
   $ means that the function exceeded 1 sec.
 
+  开销字段在函数执行时间之前
+
 
 - The task/pid field displays the thread cmdline and pid which
   executed the function. It is default disabled.
+  显示进程名称和进程号
 
 	hide: echo nofuncgraph-proc > trace_options
 	show: echo funcgraph-proc > trace_options
@@ -2427,6 +2457,7 @@ want, depending on your needs.
 - The absolute time field is an absolute timestamp given by the
   system clock since it started. A snapshot of this time is
   given on each entry/exit of functions
+  显示绝对时间
 
 	hide: echo nofuncgraph-abstime > trace_options
 	show: echo funcgraph-abstime > trace_options
@@ -2471,6 +2502,7 @@ It is default disabled.
   0)   2.861 us    |      }
 
   Example with funcgraph-tail:
+  显示结束的函数调用:
   0)               |      putname() {
   0)               |        kmem_cache_free() {
   0)   0.518 us    |          __phys_addr();
@@ -2496,7 +2528,10 @@ following "dynamic ftrace" section such as tracing only specific
 functions or tasks.
 
 dynamic ftrace
+动态跟踪
 --------------
+
+##HERE
 
 If CONFIG_DYNAMIC_FTRACE is set, the system will run with
 virtually no overhead when function tracing is disabled. The way
