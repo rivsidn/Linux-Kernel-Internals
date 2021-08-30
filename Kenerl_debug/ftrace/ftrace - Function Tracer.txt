@@ -714,14 +714,13 @@ Here is the list of current tracers that may be configured.
 	records the largest time for which irqs and/or preemption
 	is disabled.
 
-### HERE
-
   "wakeup"
 
 	Traces and records the max latency that it takes for
 	the highest priority task to get scheduled after
 	it has been woken up.
         Traces all tasks as an average developer would expect.
+	跟踪进程从调度到唤醒的时间延迟.
 
   "wakeup_rt"
 
@@ -741,6 +740,7 @@ Here is the list of current tracers that may be configured.
 	It will trace all the calls that a module makes to the
 	hardware. Everything it writes and reads from the I/O
 	as well.
+	跟踪模块发出的硬件调用.
 
   "branch"
 
@@ -748,15 +748,18 @@ Here is the list of current tracers that may be configured.
 	calls within the kernel. It will trace when a likely and
 	unlikely branch is hit and if it was correct in its prediction
 	of being correct.
+	分支预测追踪
 
   "nop"
 
 	This is the "trace nothing" tracer. To remove all
 	tracers from tracing simply echo "nop" into
 	current_tracer.
+	什么也不干追踪器
 
 
 Examples of using the tracer
+追踪器使用示例
 ----------------------------
 
 Here are typical examples of using the tracers when controlling
@@ -769,7 +772,7 @@ Output format:
 Here is an example of the output format of the file "trace"
 
                              --------
-# tracer: function
+# tracer: function(当前的追踪器类型)
 #
 # entries-in-buffer/entries-written: 140080/250280   #P:4
 #
@@ -806,12 +809,16 @@ function name that was traced "sys_close" and the parent function that
 called this function "system_call_fastpath". The timestamp is the time
 at which the function was entered.
 
+时间戳记录的是函数进入的时间.
+
 Latency trace format
 --------------------
 
 When the latency-format option is enabled or when one of the latency
 tracers is set, the trace file gives somewhat more information to see
 why a latency happened. Here is a typical trace.
+使能延迟跟踪选项时，或者设置了某个延迟跟踪器，trace 文件会提供信息查看
+为什么发生了延迟.
 
 # tracer: irqsoff
 #
@@ -895,6 +902,7 @@ explains which is which.
 	'.' - normal context.
 
   preempt-depth: The level of preempt_disabled
+  调度深度: 禁止调度深度
 
 The above is mostly meaningful for kernel developers.
 
@@ -921,6 +929,7 @@ The above is mostly meaningful for kernel developers.
   to easily find where the latency occurred.
 
 trace_options
+追踪选项
 -------------
 
 The trace_options file (or the options directory) is used to control
@@ -958,14 +967,17 @@ nobranch
 
 To disable one of the options, echo in the option prepended with
 "no".
+选项去使能.
 
   echo noprint-parent > trace_options
 
 To enable an option, leave off the "no".
+选项使能.
 
   echo sym-offset > trace_options
 
 Here are the available options:
+如下是可用选项:
 
   print-parent - On function traces, display the calling (parent)
 		 function as well as the function being traced.
@@ -1007,6 +1019,7 @@ Here are the available options:
   bin - This will print out the formats in raw binary.
 
   block - When set, reading trace_pipe will not block when polled.
+        - 设置之后，当poll 读取trace_pipe 的时候不会阻塞
 
   trace_printk - Can disable trace_printk() from writing into the buffer.
 
@@ -1018,6 +1031,7 @@ Here are the available options:
 	     and it may look like only one CPU ran (the one with the
 	     oldest events). When the annotate option is set, it will
 	     display when a new CPU buffer started:
+	     添加注释
 
           <idle>-0     [001] dNs4 21169.031481: wake_up_idle_cpu <-add_timer_on
           <idle>-0     [001] dNs4 21169.031482: _raw_spin_unlock_irqrestore <-add_timer_on
@@ -1055,6 +1069,7 @@ x494] <- /root/a.out[+0x4a8] <- /lib/libc-2.7.so[+0x1e1a6]
   latency-format - This option changes the trace output. When it is enabled,
 		   the trace displays additional information about the
 		   latency, as described in "Latency trace format".
+		   使能时会显示延迟信息.
 
   record-cmd - When any event or tracer is enabled, a hook is enabled
 	       in the sched_switch trace point to fill comm cache
@@ -1062,6 +1077,7 @@ x494] <- /root/a.out[+0x4a8] <- /lib/libc-2.7.so[+0x1e1a6]
 	       overhead, and if you only care about pids, and not the
 	       name of the task, disabling this option can lower the
 	       impact of tracing. See "saved_cmdlines".
+	       记录pid 和进程名之间的对应关系.
 
   record-tgid - When any event or tracer is enabled, a hook is enabled
 	        in the sched_switch trace point to fill the cache of
@@ -1073,6 +1089,7 @@ x494] <- /root/a.out[+0x4a8] <- /lib/libc-2.7.so[+0x1e1a6]
               discarded and overwritten. If "0", then the newest
               events are discarded.
 	        (see per_cpu/cpu0/stats for overrun and dropped)
+	      当数据满之后，是丢弃新的还是丢弃旧的.
 
   disable_on_free - When the free_buffer is closed, tracing will
   		    stop (tracing_on set to 0).
@@ -1094,11 +1111,13 @@ x494] <- /root/a.out[+0x4a8] <- /lib/libc-2.7.so[+0x1e1a6]
   markers - When set, the trace_marker is writable (only by root).
   	    When disabled, the trace_marker will error with EINVAL
 	    on write.
+	    使能之后，trace_marker 是可写的，去使能之后，不可写.
 
   event-fork - When set, tasks with PIDs listed in set_event_pid will have
 	       the PIDs of their children added to set_event_pid when those
 	       tasks fork. Also, when tasks with PIDs in set_event_pid exit,
 	       their PIDs will be removed from the file.
+	       设置之后会跟踪已设置进程的子进程.
 
   function-trace - The latency tracers will enable function tracing
   	    if this option is enabled (default it is). When
@@ -1129,6 +1148,7 @@ x494] <- /root/a.out[+0x4a8] <- /lib/libc-2.7.so[+0x1e1a6]
 
 
 Here are the per tracer options:
+每个追踪器独立的选项:
 
 Options for function tracer:
 
@@ -1138,6 +1158,10 @@ Options for function tracer:
 		     "set_ftrace_filter" otherwise the system performance
 		     will be critically degraded. Remember to disable
 		     this option before clearing the function filter.
+		     打印函数调用栈。
+		     使能该功能的时候一定要设置"set_ftrace_filter" 选项，
+		     否则系统性能会大幅度下降。
+		     一定要在清空函数过滤之前关闭该选项。
 
 Options for function_graph tracer:
 
@@ -1161,6 +1185,7 @@ Options for function_graph tracer:
 		       A certain amount, then a delay marker is
 		       displayed. See "delay" above, under the
 		       header description.
+		       函数过载
 
   funcgraph-proc - Unlike other tracers, the process' command line
 		   is not displayed by default, but instead only
@@ -1349,6 +1374,9 @@ enabling function tracing, we incur an added overhead. This
 overhead may extend the latency times. But nevertheless, this
 trace has provided some very helpful debugging information.
 
+使能 function_trace 之后，会将中断中的函数调用打印出来，但同时会增加负载，
+增加时延.
+
 
 preemptoff
 ----------
@@ -1358,10 +1386,14 @@ interrupts but the task cannot be preempted and a higher
 priority task must wait for preemption to be enabled again
 before it can preempt a lower priority task.
 
+关闭抢占之后，能够接受中断但是程序不能抢占。
+高优先级的进程必须等待抢占使能之后才能抢占低优先级进程。
+
 The preemptoff tracer traces the places that disable preemption.
 Like the irqsoff tracer, it records the maximum latency for
 which preemption was disabled. The control of preemptoff tracer
 is much like the irqsoff tracer.
+preemptoff 追踪器跟踪关闭抢占的地方，记录最大延迟.
 
  # echo 0 > options/function-trace
  # echo preemptoff > current_tracer
@@ -1400,6 +1432,8 @@ is much like the irqsoff tracer.
  => do_IRQ
  => ret_from_intr
 
+
+##HERE
 
 This has some more changes. Preemption was disabled when an
 interrupt came in (notice the 'h'), and was enabled on exit.
