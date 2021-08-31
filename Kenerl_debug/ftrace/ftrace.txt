@@ -660,6 +660,7 @@ of ftrace. Here is a list of some of the key files:
 	 read events: The number of events read.
 
 The Tracers
+追踪器
 -----------
 
 Here is the list of current tracers that may be configured.
@@ -1124,6 +1125,8 @@ x494] <- /root/a.out[+0x4a8] <- /lib/libc-2.7.so[+0x1e1a6]
 	    it is disabled, the latency tracers do not trace
 	    functions. This keeps the overhead of the tracer down
 	    when performing latency tests.
+	    使能延迟跟踪的时候会自动使能函数跟踪(默认)，当去使能的时候
+	    延迟跟踪不会追踪函数，可以降低开销.
 
   function-fork - When set, tasks with PIDs listed in set_ftrace_pid will
 		  have the PIDs of their children added to set_ftrace_pid
@@ -1223,6 +1226,7 @@ Options for function_graph tracer:
 Options for blk tracer:
 
   blk_classic - Shows a more minimalistic output.
+  		显示一个及简的输出
 
 
 irqsoff
@@ -3175,6 +3179,9 @@ mkdir, and removing directories with rmdir. The directory created
 with mkdir in this directory will already contain files and other
 directories after it is created.
 
+mkdir 添加
+rmdir 删除
+
  # mkdir instances/foo
  # ls instances/foo
 buffer_size_kb  buffer_total_size_kb  events  free_buffer  per_cpu
@@ -3294,6 +3301,7 @@ directories, the rmdir will fail with EBUSY.
 
 
 Stack trace
+跟踪内核调用栈
 -----------
 Since the kernel has a fixed sized stack, it is important not to
 waste it in functions. A kernel developer must be conscience of
