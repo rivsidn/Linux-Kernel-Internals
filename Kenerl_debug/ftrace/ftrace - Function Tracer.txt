@@ -2531,14 +2531,14 @@ dynamic ftrace
 动态跟踪
 --------------
 
-##HERE
-
 If CONFIG_DYNAMIC_FTRACE is set, the system will run with
 virtually no overhead when function tracing is disabled. The way
 this works is the mcount function call (placed at the start of
 every kernel function, produced by the -pg switch in gcc),
 starts of pointing to a simple return. (Enabling FTRACE will
 include the -pg switch in the compiling of the kernel.)
+动态跟踪通过mcount 函数调用实现，最开始的时候这个函数仅是一个简单
+的return.
 
 At compile time every C file object is run through the
 recordmcount program (located in the scripts directory). This
@@ -2658,6 +2658,7 @@ Perhaps this is not enough. The filters also allow glob(7) matching.
 Note: It is better to use quotes to enclose the wild cards,
       otherwise the shell may expand the parameters into names
       of files in the local directory.
+      为了防止shell展开，最好将包含通配符的字符括起来.
 
  # echo 'hrtimer_*' > set_ftrace_filter
 
@@ -2705,9 +2706,10 @@ hrtimer_init_sleeper
 
 
 This is because the '>' and '>>' act just like they do in bash.
-To rewrite the filters, use '>'
-To append to the filters, use '>>'
+To rewrite the filters, use '>'		(覆盖添加)
+To append to the filters, use '>>'	(追加添加)
 
+清空:
 To clear out a filter so that all functions will be recorded
 again:
 
@@ -2743,6 +2745,7 @@ hrtimer_init_sleeper
 
 The set_ftrace_notrace prevents those functions from being
 traced.
+设置到 set_ftrace_notrace 中的函数不会被跟踪.
 
  # echo '*preempt*' '*lock*' > set_ftrace_notrace
 
@@ -2784,6 +2787,8 @@ special features only available in the function-graph tracer.
 
 If you want to trace only one function and all of its children,
 you just have to echo its name into set_graph_function:
+如果想要跟踪某函数以及函数的其他子函数，可以通过设置 set_graph_function 
+实现:
 
  echo __do_fault > set_graph_function
 
@@ -2845,6 +2850,9 @@ enabled in the kernel). If it is disabled, all function tracing is
 disabled. This includes not only the function tracers for ftrace, but
 also for any other uses (perf, kprobes, stack tracing, profiling, etc).
 
+ftrace_enabled 是一个大的开关，关闭之后也会对其他功能造成影响(perf, kprobes,
+stack tracing, profiling等)
+
 Please disable this with care.
 
 This can be disable (and enabled) with:
@@ -2859,10 +2867,13 @@ This can be disable (and enabled) with:
 
 
 Filter commands
+过滤命令
 ---------------
 
 A few commands are supported by the set_ftrace_filter interface.
+set_ftrace_filter 命令支持某些过滤命令.
 Trace commands have the following format:
+Trace 命令有如下格式:
 
 <function>:<command>:<parameter>
 
@@ -2906,6 +2917,7 @@ The following commands are supported:
   tracing system is turned on and off. If unspecified, there is
   no limit. For example, to disable tracing when a schedule bug
   is hit the first 5 times, run:
+  参数表示命中次数:
 
    echo '__schedule_bug:traceoff:5' > set_ftrace_filter
 
@@ -2926,6 +2938,7 @@ The following commands are supported:
 
 - snapshot
   Will cause a snapshot to be triggered when the function is hit.
+  触发快照
 
    echo 'native_flush_tlb_others:snapshot' > set_ftrace_filter
 
@@ -2934,6 +2947,7 @@ The following commands are supported:
    echo 'native_flush_tlb_others:snapshot:1' > set_ftrace_filter
 
   To remove the above commands:
+  移除上述命令:
 
    echo '!native_flush_tlb_others:snapshot' > set_ftrace_filter
    echo '!native_flush_tlb_others:snapshot:0' > set_ftrace_filter
@@ -2955,7 +2969,7 @@ The following commands are supported:
     <function>:disable_event:<system>:<event>[:count]
 
   To remove the events commands:
-
+  移除事件命令:
 
    echo '!try_to_wake_up:enable_event:sched:sched_switch:0' > \
    	 set_ftrace_filter
@@ -3276,6 +3290,8 @@ To remove the instances, simply delete their directories:
 Note, if a process has a trace file open in one of the instance
 directories, the rmdir will fail with EBUSY.
 
+如果有人正在用，会删除失败.
+
 
 Stack trace
 -----------
@@ -3284,6 +3300,9 @@ waste it in functions. A kernel developer must be conscience of
 what they allocate on the stack. If they add too much, the system
 can be in danger of a stack overflow, and corruption will occur,
 usually leading to a system panic.
+
+由于内核有固定大小的栈空间，所以不该在函数中浪费太多栈空间，否则
+会导致内核异常。
 
 There are some tools that check this, usually with interrupts
 periodically checking usage. But if you can perform a check
@@ -3337,3 +3356,4 @@ Currently, -mfentry is used by gcc 4.6.0 and above on x86 only.
 
 More details can be found in the source code, in the
 kernel/trace/*.c files.
+可以去源代码中查看更多细节.
