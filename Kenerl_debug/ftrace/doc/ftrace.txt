@@ -133,6 +133,7 @@ of ftrace. Here is a list of some of the key files:
 	Note, the function and event trigger "traceoff" will also
 	set this file to zero and stop tracing. Which can also
 	be re-enabled by user space using this file.
+	函数和事件触发器"traceoff" 同样会设置该值．
 
   trace:
 
@@ -161,6 +162,8 @@ of ftrace. Here is a list of some of the key files:
 	that is displayed in one of the above output
 	files. Options also exist to modify how a tracer
 	or events work (stack traces, timestamps, etc).
+	追踪器和事件是并列存在的，options可以用来控制如何
+	工作(调用栈，时间戳等)
 
   options:
 
@@ -281,6 +284,7 @@ of ftrace. Here is a list of some of the key files:
 	added on fork, enable the "event-fork" option. That option will also
 	cause the PIDs of tasks to be removed from this file when the task
 	exits.
+	设置跟踪子进程选项.
 
   set_graph_function:
 
@@ -354,10 +358,12 @@ of ftrace. Here is a list of some of the key files:
   kprobe_events:
  
 	Enable dynamic trace points. See kprobetrace.txt.
+	使能动态追踪点
 
   kprobe_profile:
 
 	Dynamic trace points stats. See kprobetrace.txt.
+	动态追踪点统计
 
   max_graph_depth:
 
@@ -497,6 +503,8 @@ of ftrace. Here is a list of some of the key files:
 	设置时钟时，仅需要将时钟名称输出到文件中.
 
 	  echo global > trace_clock
+
+##HERE
 
   trace_marker:
 
@@ -1965,7 +1973,7 @@ events.
 函数追踪可能会造成巨大延迟，但是不查看延迟过程中发生了什么可能会很难
 知道是什么原因导致的延迟。这里有一处中间地带，那就是使能事件.
 
- # echo 0 > options/function-trace
+ # echo 0 > options/function-trace(关闭函数跟踪)
  # echo wakeup_rt > current_tracer
  # echo 1 > events/enable
  # echo 1 > tracing_on

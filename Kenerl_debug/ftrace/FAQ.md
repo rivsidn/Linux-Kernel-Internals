@@ -2,31 +2,12 @@
 
 
 
-
-
-
-
-
-
-
-
 ## 问题列表
 
 | 序号    | 标题                         |
 | ------- | ---------------------------- |
 | [1](#1) | `CONFIG_DYNAMIC_FTRACE` 作用 |
-
-
-
-
-
-
-
-
-
-
-
-
+| [2](#2) | `ftrace`与`event`之间关系    |
 
 
 
@@ -53,5 +34,11 @@
   | available_filter_functions | 可跟踪的函数 |
   | set_ftrace_filter          | 要跟踪的函数 |
   | set_ftrace_notrace         | 不跟踪的函数 |
+
+* <a name="2">`ftrace`与`event`之间关系</a>
+
+  `ftrace` 与 `event` 是两个相互独立的跟踪机制，可以实现单独编译．
+
+  两个都通过tracefs 提供控制，查看接口．
 
 * 
