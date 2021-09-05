@@ -34,13 +34,15 @@ header file.
 They can be used for tracing and performance accounting.
 跟踪和性能统计
 
-
 * Usage
 
 Two elements are required for tracepoints :
+使用tracepoint 需要两部分:
 
 - A tracepoint definition, placed in a header file.
+  定义
 - The tracepoint statement, in C code.
+  声明
 
 In order to use tracepoints, you should include linux/tracepoint.h.
 

@@ -22,3 +22,14 @@ make install
 ```
 
 
+
+## 附录
+
+### 编译生成预处理文件
+
+```bash
+make ./net/core/dev.i
+```
+
+生成对应.c 的预处理文件。
+
