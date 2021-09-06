@@ -1,1 +1,0 @@
-cmd_/home/rivsidn/gitHub/linux-kernel/Kenerl_debug/tracepoint/samples/tracepoint_probe.mod := { echo  /home/rivsidn/gitHub/linux-kernel/Kenerl_debug/tracepoint/samples/tracepoint_probe.o;  echo; } > /home/rivsidn/gitHub/linux-kernel/Kenerl_debug/tracepoint/samples/tracepoint_probe.mod
