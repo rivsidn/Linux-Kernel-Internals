@@ -25,4 +25,4 @@
 
   
 
-* 
+* `DECLARE_BITMAP()`使用？
