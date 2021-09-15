@@ -18,25 +18,15 @@ int main(int argc, char *argv[])
 	unsigned int rand;
 	unsigned short first;
 
-#if 1
-        low = 0;
-        high = 100;
-        remaining = high - low + 1;
+    low = 0;
+    high = 100;
+    remaining = high - low + 1;
 
-        for (i = 0; i < 1024; i++) {
-                first = (i * remaining) >> 10; 
-                printf("%d\t\t%d\n", i, first);
-        }                                                                  
-#else
-        low = 32768;
-        high = 61000;
-        remaining = high - low + 1;
-
-        /* 生成一个随机值 */
-        rand = random32();
-        /* 怎么理解这个处理 */
-        first = (((u64)rand * remaining) >> 32) + low;
-#endif
+    //将本来处于[0,1024) 范围内的随机数等比缩小到[0-100) 范围
+    for (i = 0; i < 1024; i++) {
+        first = (i * remaining) >> 10; 
+        printf("%d\t\t%d\n", i, first);
+    }
 
 	return 0;
 }
