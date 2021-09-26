@@ -20,4 +20,10 @@
 
 * `cond_resched()` 函数的作用
 
+* `kmemdup()` 函数实现？
+
+* `call_rcu()` 用法？
+
+* `lock_class_key` 这个结构体的用法？
+
 
