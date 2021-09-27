@@ -26,4 +26,12 @@
 
 * `lock_class_key` 这个结构体的用法？
 
+* `macvlan.c` 这个驱动的用处？
+
+* `skb_push()`、`skb_pull()`  这两个函数的使用，`skb`数据结构
+
+* `skb` 中的 `len` `data_len` `skb_headlen()` `skb_pagelen()`  这几个分别是做什么用的？
+
+* `skb_header_pointer()` 这个函数的用处？
+
 
