@@ -38,6 +38,10 @@
 
 * 内核中bitmap 的使用
 
+* `hlist_for_each_entry_rcu()` 使用？
+
+* `get_unique_tuple()` 中 `pr_debug()` 输出？
+
 * 
 
 
