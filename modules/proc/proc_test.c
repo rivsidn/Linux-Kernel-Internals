@@ -1,8 +1,9 @@
 /*
- * 5.0.0-23 编译通过
- *
  * 1. proc 函数接口，是如何执行的
  * 2. 文件系统中几个重要的数据结构
+ *
+ * 编译通过内核列表:
+ * 5.0.0
  */
 #include <linux/kernel.h>
 #include <linux/module.h>
