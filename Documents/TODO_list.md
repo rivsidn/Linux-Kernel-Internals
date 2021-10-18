@@ -31,6 +31,9 @@
 * 
 * __force 这个关键字是做什么用的？
 * 
+* `__builtin_constant_p()` 的使用，起什么作用？
+* `2.6` 内核的进程调度
+* `2.6`  内核中 `CONFIG_PREEMPT` 的实现？`Kconfig.preempt` 实现？
 * 
 
 
