@@ -35,5 +35,8 @@
 * `2.6` 内核的进程调度
 * `2.6`  内核中 `CONFIG_PREEMPT` 的实现？`Kconfig.preempt` 实现？
 * 
+* 内存屏障？("": : : "memory") 实现理解？
+* 
+* 
 
 
