@@ -1,7 +1,6 @@
 * `core_initcalll()` 如何使用？何时才能 `printk`？
 * `module_exit()` 中的函数是在什么时候执行的？
 * `modules_init()` 当成模块加载的时候是如何执行的？
-* 2.6 内核 `seqlock()` 中的内存屏障如何理解？
 * 2.6 内核报文如何做NAT
 * 2.6 内核的`socket` 处理
 * RPS/RFS 实现
@@ -34,8 +33,13 @@
 * `__builtin_constant_p()` 的使用，起什么作用？
 * `2.6` 内核的进程调度
 * `2.6`  内核中 `CONFIG_PREEMPT` 的实现？`Kconfig.preempt` 实现？
-* 
+
+## 并发编程
+
 * 内存屏障？("": : : "memory") 实现理解？
+* 编译器乱序？CPU乱序？CPU缓存？分别对代码执行的影响，以及应该用哪种同步机制
+* 内存屏障，`ACCESS_ONCE()` 
+* `read_seqbegin()` 中的 `smp_rmb()` 和 `rcu_dereference()` 中的 `ACCESS_ONCE()` 如何结合起来理解？
 * 
 * 
 
