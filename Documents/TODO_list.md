@@ -8,12 +8,10 @@
 * 4.4.155  proc 文件系统使用
 * 文件系统中几个重要的结构体
 * `arp` 邻居信息处理
-* 定时器执行？
 * 2.4 内核中所有中断的初始化，分别是做什么用的
 * `INIT_DELAYED_WORK_DEFERRABLE()` 是如何使用的？
-* `cond_resched()` 函数的作用
+* `cond_resched()` 函数的作用？精确到内核调度算法
 * `kmemdup()` 函数实现？
-* `call_rcu()` 用法？
 * `lock_class_key` 这个结构体的用法？
 * `macvlan.c` 这个驱动的用处？
 * `skb_push()`、`skb_pull()`  这两个函数的使用，`skb`数据结构
@@ -23,16 +21,26 @@
 * `hlist_for_each_entry_rcu()` 使用？
 * `get_unique_tuple()` 中 `pr_debug()` 输出？
 * 
-* 中断、调度、软中断，三者之间关系？
-* 软中断处理？
-* 
 * `kmalloc()` 标识位使用？
 * 
 * __force 这个关键字是做什么用的？
 * 
-* `__builtin_constant_p()` 的使用，起什么作用？
+* `__builtin_constant_p()` 的使用，起什么作用？内建函数整理
 * `2.6` 内核的进程调度
-* `2.6`  内核中 `CONFIG_PREEMPT` 的实现？`Kconfig.preempt` 实现？
+
+
+
+## 进程调度
+
+* 等待队列
+* 
+
+## 数据结构
+
+* list, hlist, list_rcu, hlist_rcu
+* 
+
+
 
 ## 并发编程
 
@@ -41,6 +49,15 @@
 * 内存屏障，`ACCESS_ONCE()` 
 * `read_seqbegin()` 中的 `smp_rmb()` 和 `rcu_dereference()` 中的 `ACCESS_ONCE()` 如何结合起来理解？
 * 
-* 
+
+
+
+## 调试环境
+
+
+
+## 代码检测工具
+
+* `sparse` 使用？
 
 

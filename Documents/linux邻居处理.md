@@ -1,6 +1,10 @@
-`arp_constructor()` 中的 `rcu_read_lock()` 使用。
+* `arp` 和 `neighbour` 是如何联系起来的？
 
+  `neighbour` 实际上就是一个`arp` 的上层抽象，内核代码中，`arp` 是基于 `neighbour`的，`arp` 中可以直接调用`neighbour` 部分的代码。
 
+  `arp_init()`中，通过`neigh_table_init()` 将`arp_tbl` 注册到`neigh_tables` 中，
+
+* 
 
 
 
@@ -13,8 +17,6 @@
 ## 附录
 
 ### TODO
-
-* `arp` 和 `neighbour` 是如何联系起来的？
 
 * `hh_cache` 是何时创建的，如何使用的？
 
