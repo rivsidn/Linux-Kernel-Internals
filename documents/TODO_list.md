@@ -1,3 +1,9 @@
+* 如何理解`/proc/meminfo` 显示的内容
+* 
+* `rcu` 内核调试
+* 
+* `GDB` 使用
+* 
 * `core_initcalll()` 如何使用？何时才能 `printk`？
 * `module_exit()` 中的函数是在什么时候执行的？
 * `modules_init()` 当成模块加载的时候是如何执行的？

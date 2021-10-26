@@ -4,12 +4,16 @@
 
 ```bash
 # CONFIG_STRICT_KERNEL_RWX is not set
+# CONFIG_DEBUG_RODATA is not set
 CONFIG_FRAME_POINTER=y
 CONFIG_KGDB=y
 CONFIG_KGDB_SERIAL_CONSOLE=y
 CONFIG_KGDB_KDB=y
 CONFIG_KDB_KEYBOARD=y		# 不使用键盘的设备可以忽略
+
 ```
+
+**注意：如果设置了CONFIG_DEBUG_RODATA 无法添加断点。**
 
 
 
