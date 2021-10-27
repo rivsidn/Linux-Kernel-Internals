@@ -1,8 +1,22 @@
+## 进行中
+
+* 内核锁调试 `CONFIG_DEBUG_LOCK_ALLOC`，`lockdep`，`lockstat.txt`
+  * `lock_usage_bit` 这里的宏定义，学习一下
+* 
+
+
+
+## 其他
+
 * 如何理解`/proc/meminfo` 显示的内容
 * 
 * `rcu` 内核调试
 * 
+* 
+* 如何解决内核踩内存问题，如何定位
+* 
 * `GDB` 使用
+* `NMI` 中断处理
 * 
 * `core_initcalll()` 如何使用？何时才能 `printk`？
 * `module_exit()` 中的函数是在什么时候执行的？
