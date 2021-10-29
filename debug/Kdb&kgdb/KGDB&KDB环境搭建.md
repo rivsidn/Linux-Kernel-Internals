@@ -13,7 +13,7 @@ CONFIG_KDB_KEYBOARD=y		# 不使用键盘的设备可以忽略
 
 ```
 
-**注意：如果设置了CONFIG_DEBUG_RODATA 无法添加断点。**
+**注意：如果设置了CONFIG\_DEBUG\_RODATA 无法添加断点。**
 
 
 
