@@ -113,8 +113,6 @@ struct lockdep_map {
 
 
 
-
-
 ## 逻辑关系
 
 * `locp_map` 对应于一个 `lock_class` 

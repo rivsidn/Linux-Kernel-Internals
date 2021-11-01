@@ -5,7 +5,7 @@
 * `systemtap` 使用 
 * `DTrace` 使用
 * `bpftrace` 使用
-* 
+* `crash` 使用
 
 
 ## 资料整理
