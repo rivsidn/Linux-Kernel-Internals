@@ -22,6 +22,21 @@ __lock_acquire(struct lockdep_map *lock, unsigned subclass,
 
 
 
+```c
+spin_release(&lock->dep_map, 1, _RET_IP_);
+
+lock_release(l, n, i);
+
+__lock_release(lock, nested, ip);
+
+
+
+```
+
+
+
+
+
 | enum lock_usage_bit{}     |                   |      |
 | ------------------------- | ----------------- | ---- |
 | LOCKDEP_STATE(HARDIRQ)    | USED_IN           | 0000 |
