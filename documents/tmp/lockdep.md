@@ -1,20 +1,46 @@
+```c
+
+lock_acquire(lock, 0,
+            0, 0, 2,
+            NULL, _RET_IP_)
 
 
-|                           |                   |      |
+lock_acquire(struct lockdep_map *lock, unsigned int subclass,
+            int trylock, int read, int check,
+            struct lockdep_map *nest_lock, unsigned long i)
+
+__lock_acquire(lock, 0,
+              0, 0, 2, irqs_disabled_flags(flags),
+              NULL, _RET_IP_,
+              0)
+
+__lock_acquire(struct lockdep_map *lock, unsigned subclass,
+              int trylock, int read, int check, int hardirqs_off,
+              struct lockdep_map *nest_lock, unsigned long ip,
+              int references)
+```
+
+
+
+| enum lock_usage_bit{}     |                   |      |
 | ------------------------- | ----------------- | ---- |
-| LOCKDEP_STATE(HARDIRQ)    | USED_IN           | 000  |
-|                           | USED_IN_READ      | 001  |
-|                           | ENABLE_STATE      | 010  |
-|                           | ENABLE_STATE_READ | 011  |
-| LOCKDEP_STATE(SOFTIRQ)    | USED_IN           | 100  |
-|                           | USED_IN_READ      | 101  |
-|                           | ENABLE_STATE      | 110  |
-|                           | ENABLE_STATE_READ | 111  |
-| LOCKDEP_STATE(RECLAIM_FS) | USED_IN           | 200  |
-|                           | USED_IN_READ      | 201  |
-|                           | ENABLE_STATE      | 210  |
-|                           | ENABLE_STATE_READ | 211  |
-| USED                      |                   | 300  |
+| LOCKDEP_STATE(HARDIRQ)    | USED_IN           | 0000 |
+|                           | USED_IN_READ      | 0001 |
+|                           | ENABLE_STATE      | 0010 |
+|                           | ENABLE_STATE_READ | 0011 |
+| LOCKDEP_STATE(SOFTIRQ)    | USED_IN           | 0100 |
+|                           | USED_IN_READ      | 0101 |
+|                           | ENABLE_STATE      | 0110 |
+|                           | ENABLE_STATE_READ | 0111 |
+| LOCKDEP_STATE(RECLAIM_FS) | USED_IN           | 1000 |
+|                           | USED_IN_READ      | 1001 |
+|                           | ENABLE_STATE      | 1010 |
+|                           | ENABLE_STATE_READ | 1011 |
+| USED                      |                   | 1100 |
+
+
+
+`mark_lock_irq()` 
 
 
 
