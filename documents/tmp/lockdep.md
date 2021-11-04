@@ -1,4 +1,60 @@
 ```c
+	/* Find the first held_lock of current chain */
+	hlock_next = hlock;
+	for (i = curr->lockdep_depth - 1; i >= 0; i--) {
+		hlock_curr = curr->held_locks + i;
+		if (hlock_curr->irq_context != hlock_next->irq_context)
+			break;
+		hlock_next = hlock;
+	}
+	i++;
+	chain->depth = curr->lockdep_depth + 1 - i;
+	cn = nr_chain_hlocks;
+	while (cn + chain->depth <= MAX_LOCKDEP_CHAIN_HLOCKS) {
+		/*
+		 * cn == nf_chain_hlocks 时，返回值为 cn；
+		 * cn != nf_chain_hlocks 时，返回值为 nr_chain_hlocks
+		 * 下边这段代码展开就是:
+		 * {
+		 * 	nr_chain_hlocks = cn + chain->depth;
+		 * 	n = cn;
+		 * }
+		 */
+		n = cmpxchg(&nr_chain_hlocks, cn, cn + chain->depth);
+		if (n == cn)
+			break;
+		cn = n;
+	}
+	if (likely(cn + chain->depth <= MAX_LOCKDEP_CHAIN_HLOCKS)) {
+		chain->base = cn;
+		/* TODO: 这个地方的i, j 一定能对应上么？ */
+		for (j = 0; j < chain->depth - 1; j++, i++) {
+			int lock_id = curr->held_locks[i].class_idx - 1;
+			chain_hlocks[chain->base + j] = lock_id;
+		}
+		chain_hlocks[chain->base + j] = class - lock_classes;
+	}
+```
+
+
+```c
+	chain->depth = curr->lockdep_depth + 1 - i;
+	if (likely(cn + chain->depth <= MAX_LOCKDEP_CHAIN_HLOCKS)) {
+		chain->base = cn;
+#if 1
+		for (j = 0; j < curr->lockdep_depth - i; j++, i++) {
+#else
+		for (j = 0; j < chain->depth - 1; j++, i++) {
+#endif
+			int lock_id = curr->held_locks[i].class_idx - 1;
+			chain_hlocks[chain->base + j] = lock_id;
+		}
+		chain_hlocks[chain->base + j] = class - lock_classes;
+	}
+```
+
+
+```c
 
 lock_acquire(lock, 0,
             0, 0, 2,
@@ -19,6 +75,8 @@ __lock_acquire(struct lockdep_map *lock, unsigned subclass,
               struct lockdep_map *nest_lock, unsigned long ip,
               int references)
 ```
+
+
 
 
 

@@ -2,6 +2,7 @@
 
 * 内核锁调试 `CONFIG_DEBUG_LOCK_ALLOC`，`lockdep`，`lockstat.txt`
   * `lock_usage_bit` 这里的宏定义，学习一下
+  * `double_unlock_balance()` 这个函数的用处？
 * 
 
 
@@ -10,7 +11,7 @@
 
 * 如何理解`/proc/meminfo` 显示的内容
 
-* 
+* 内核代码是在哪里设置的 `skb->transport_header` ？
 
 * 关中断之后是否可能引起调度？不可屏蔽中断是否会引起调度
 
