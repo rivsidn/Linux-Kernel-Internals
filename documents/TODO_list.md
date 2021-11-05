@@ -9,7 +9,11 @@
 
 ## 其他
 
+* 内核代码中的测试用例是如何写的？
+
 * 如何理解`/proc/meminfo` 显示的内容
+
+* `print_stack_trace()` `save_stack_trace()`函数实现？
 
 * 内核代码是在哪里设置的 `skb->transport_header` ？
 
@@ -25,9 +29,17 @@
 
 * `CONFIG_TRACE_IRQFLAGS` 设置
 
-* 
+* `kallsyms.c` 实现
+
+* `task_pid_nr` 和 `task_pid_nr_ns` 之间什么关系？有什么差异？
+
+* `dump_stack` 的实现
+
+* `local_irq_save()`  `local_irq_restore()` 实现？
 
 * 如何解决内核踩内存问题，如何定位
+
+* `__init` `__exit` 标识符使用？
 
 * 
 

@@ -28,7 +28,9 @@
 
 * `get_usage_chars()` 函数中宏的实现？
 
+* `locking-selftest.c` 代码梳理，如何写测试用例？
+
 * 
 
-
+* 
 

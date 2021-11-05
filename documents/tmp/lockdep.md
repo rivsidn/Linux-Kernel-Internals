@@ -95,21 +95,21 @@ __lock_release(lock, nested, ip);
 
 
 
-| enum lock_usage_bit{}     |                   |      |
-| ------------------------- | ----------------- | ---- |
-| LOCKDEP_STATE(HARDIRQ)    | USED_IN           | 0000 |
-|                           | USED_IN_READ      | 0001 |
-|                           | ENABLE_STATE      | 0010 |
-|                           | ENABLE_STATE_READ | 0011 |
-| LOCKDEP_STATE(SOFTIRQ)    | USED_IN           | 0100 |
-|                           | USED_IN_READ      | 0101 |
-|                           | ENABLE_STATE      | 0110 |
-|                           | ENABLE_STATE_READ | 0111 |
-| LOCKDEP_STATE(RECLAIM_FS) | USED_IN           | 1000 |
-|                           | USED_IN_READ      | 1001 |
-|                           | ENABLE_STATE      | 1010 |
-|                           | ENABLE_STATE_READ | 1011 |
-| USED                      |                   | 1100 |
+| enum lock_usage_bit{}     |                   | 二进制 | 十进制 |
+| ------------------------- | ----------------- | ------ | ------ |
+| LOCKDEP_STATE(HARDIRQ)    | USED_IN           | 0000   | 0      |
+|                           | USED_IN_READ      | 0001   | 1      |
+|                           | ENABLE_STATE      | 0010   | 2      |
+|                           | ENABLE_STATE_READ | 0011   | 3      |
+| LOCKDEP_STATE(SOFTIRQ)    | USED_IN           | 0100   | 4      |
+|                           | USED_IN_READ      | 0101   | 5      |
+|                           | ENABLE_STATE      | 0110   | 6      |
+|                           | ENABLE_STATE_READ | 0111   | 7      |
+| LOCKDEP_STATE(RECLAIM_FS) | USED_IN           | 1000   | 8      |
+|                           | USED_IN_READ      | 1001   | 9      |
+|                           | ENABLE_STATE      | 1010   | 10     |
+|                           | ENABLE_STATE_READ | 1011   | 11     |
+| USED                      |                   | 1100   | 12     |
 
 
 
