@@ -9,7 +9,11 @@
 
 ## 其他
 
+* `CONFIG_DYNAMIC_DEBUG`使用，`netdev_dbg()`
+
 * 内核模块加载流程？
+
+* `CONFIG_DEBUG_INFO`下边内容
 
 * 内核代码中的测试用例是如何写的？
 
@@ -140,5 +144,4 @@
 ## 代码检测工具
 
 * `sparse` 使用？
-
 
