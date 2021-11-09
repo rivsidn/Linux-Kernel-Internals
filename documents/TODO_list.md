@@ -9,6 +9,8 @@
 
 ## 其他
 
+* `put_cpu_var()` `get_cpu_var()`用法？
+
 * `CONFIG_DYNAMIC_DEBUG`使用，`netdev_dbg()`
 
 * 内核模块加载流程？

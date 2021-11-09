@@ -12,6 +12,8 @@
 
 
 
+* 还是没理解 `lockdep_recursion` 这个值的用处？
+
 * 使能之后，为什么 `rcu_dereference()` 不在 `rcu_read_lock()` 之中会报异常
 
   注释掉 `skb_dst()` 中的`WARN_ON` 宏。
