@@ -7,6 +7,22 @@
 
 
 
+## 内存问题
+
+* 内核内存检测 `KASAN`
+  * `KASAN` 实现
+
+* 内核内存泄漏问题 `kmemleak`
+
+
+
+## 调试
+
+* 通过`kdb` 或者 `ftrace` 获取函数变量
+* 
+
+
+
 ## 其他
 
 * `put_cpu_var()` `get_cpu_var()`用法？
