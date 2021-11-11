@@ -113,10 +113,6 @@ static bool trace_net_dev_xmit_enabled(void)
 
 
 
-
-
-
-
 ## 附录
 
 ### 内核生成预处理文件

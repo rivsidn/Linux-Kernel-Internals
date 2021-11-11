@@ -1,9 +1,9 @@
 ## 进行中
 
-* 内核锁调试 `CONFIG_DEBUG_LOCK_ALLOC`，`lockdep`，`lockstat.txt`
-  * `lock_usage_bit` 这里的宏定义，学习一下
-  * `double_unlock_balance()` 这个函数的用处？
+* `tracepoint` `trace event` 实现？
 * 
+
+
 
 
 
@@ -19,11 +19,21 @@
 ## 调试
 
 * 通过`kdb` 或者 `ftrace` 获取函数变量
-* 
+* 通过`kdb` 跟踪中断和进程调度
+
+
+
+## 文档整理
 
 
 
 ## 其他
+
+* `vmlinux.lds.h` 实现？
+
+* 常用的二进制工具
+
+* `double_lock_balance()` 函数的用法？
 
 * `put_cpu_var()` `get_cpu_var()`用法？
 
@@ -141,7 +151,7 @@
 ## 数据结构
 
 * list, hlist, list_rcu, hlist_rcu
-* 
+* `lockdep` 代码实现？数据结构，算法，宏定义
 
 
 

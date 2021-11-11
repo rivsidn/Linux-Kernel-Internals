@@ -11,7 +11,10 @@ CONFIG_TRACEPOINTS=y
 ##　挂载tracefs文件系统
 
 ```bash
+# 4.4.155 内核执行
 mount -t tracefs nodev /sys/kernel/tracing
+# 2.6.35.6 内核执行
+mount -t debugfs nodev /sys/kernel/debug
 ```
 
 
