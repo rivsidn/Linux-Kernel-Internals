@@ -18,16 +18,22 @@
 
 ## 调试
 
-* 通过`kdb` 或者 `ftrace` 获取函数变量
+* 通过`kdb` 或者 `ftrace` 获取函数变量，获取函数返回值
 * 通过`kdb` 跟踪中断和进程调度
+* `livepatch` 功能
 
 
 
 ## 文档整理
 
+* 如何读代码
+* 
+
 
 
 ## 其他
+
+* `static_key_slow_inc()` 4.4 内核怎么理解？`jump_label` 用处
 
 * `vmlinux.lds.h` 实现？
 
