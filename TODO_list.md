@@ -1,6 +1,7 @@
 ## 进行中
 
 * `tracepoint` `trace event` 实现？
+* 内存管理部分代码
 * 
 
 
@@ -19,7 +20,7 @@
 ## 调试
 
 * 通过`kdb` 或者 `ftrace` 获取函数变量，获取函数返回值
-* 通过`kdb` 跟踪中断和进程调度
+* 通过`kdb` 跟踪函数执行分支，查看局部变量
 * `livepatch` 功能
 
 
@@ -32,6 +33,10 @@
 
 
 ## 其他
+
+* 
+
+* `call_rcu_sched()` 实现
 
 * `static_key_slow_inc()` 4.4 内核怎么理解？`jump_label` 用处
 
