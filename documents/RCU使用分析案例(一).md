@@ -60,10 +60,11 @@ static void inetdev_destroy(struct in_device *in_dev)
 
 
 
-## TODO
+## FAQ
 
 * `rcu_assign_pointer()` 和 `rcu_dereference()` 使用？这两个有什么作用？
-* 
 
+  发布、订阅模式，确保在一个CPU上修改的值能立即被另一个CPU获取到。
 
+  
 

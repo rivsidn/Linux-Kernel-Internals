@@ -1,3 +1,7 @@
+基于`linux-2.6.35.6` 内核。
+
+
+
 ## 重要结构体
 
 ```c
@@ -54,8 +58,6 @@ struct tracepoint_iter {
 2. 创建之后调用`tracepoint_entry_add_probe()` 添加钩子函数，钩子函数存储在 `tp_probes{}` 中，需要调用`allocate_probes()`申请内存，并设置对应的钩子函数。
 3. 执行完以上操作之后，只是在`tracepoint_entry{}` 中更新了钩子函数，并没有实际更新到 `tracepoint{}` 中，需要调用 `tracepoint_update_probes()` 来更新。
 4. 同样也会在 `set_tracepoint()` 中设置 `tracepoint{}` 的 state，`_DO_TRACE()`执行的时候会调用。
-
-
 
 
 

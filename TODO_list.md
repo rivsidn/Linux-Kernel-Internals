@@ -1,7 +1,6 @@
 ## 进行中
 
 * `tracepoint` `trace event` 实现？
-* 内存管理部分代码
 * 
 
 
