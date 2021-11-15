@@ -30,10 +30,14 @@
 * 
 
 
-
 ## 其他
 
-* 
+* `dsa` 驱动实现
+
+* 4.4 内核 `platform_driver_register()` 功能？实现？
+  * 如何从设备树解析到具体的设备
+
+* `vim` tap 处理
 
 * `call_rcu_sched()` 实现
 
