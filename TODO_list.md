@@ -32,6 +32,10 @@
 
 ## 其他
 
+* `__releases()` `__acquires()` 实现？
+
+* 如何分析C 代码预处理之后的文件？
+
 * `dsa` 驱动实现
 
 * 4.4 内核 `platform_driver_register()` 功能？实现？
