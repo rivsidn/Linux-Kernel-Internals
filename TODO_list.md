@@ -1,7 +1,7 @@
 ## 进行中
 
 * `tracepoint` `trace event` 实现？
-* 
+* 分析`ftrace` 实现？
 
 
 
