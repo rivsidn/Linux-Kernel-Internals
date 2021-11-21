@@ -32,6 +32,8 @@
 
 ## 其他
 
+* `atomic_notifier_chain_register()` 实现？什么时候需要调用这个通知链？
+
 * `__releases()` `__acquires()` 实现？
 
 * 如何分析C 代码预处理之后的文件？
@@ -39,8 +41,9 @@
 * `dsa` 驱动实现
 
 * 4.4 内核 `platform_driver_register()` 功能？实现？
-  * 如何从设备树解析到具体的设备
-
+  
+* 如何从设备树解析到具体的设备
+  
 * `vim` tap 处理
 
 * `call_rcu_sched()` 实现
