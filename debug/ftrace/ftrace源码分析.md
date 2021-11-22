@@ -1,6 +1,5 @@
-
-
-
+1. 先读`ring_buffer.c`
+2. 
 
 
 
@@ -10,6 +9,7 @@
 
 ## TODO
 
+* 
 * 结构体作用
   * trace_array{}
 * options 是如何添加的，为什么nop 的两个选项没有添加上
