@@ -29,7 +29,10 @@
 * 
 
 
+
 ## 其他
+
+* `stardict` 使用，没网络的情况下，需要用词典软件
 
 * `atomic_notifier_chain_register()` 实现？什么时候需要调用这个通知链？
 
