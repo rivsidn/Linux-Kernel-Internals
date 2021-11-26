@@ -1,6 +1,4 @@
-1. 看一下文档`ring-buffer-design.txt`
-
-2. 先读`ring_buffer.c`
+1. 先读`ring_buffer.c`
 
    1. 四种状态如何理解？
 
@@ -13,7 +11,7 @@
 
    2. 
 
-3. 
+2. 
 
 
 
