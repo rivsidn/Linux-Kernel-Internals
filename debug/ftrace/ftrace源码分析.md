@@ -1,4 +1,6 @@
-* 弄明白`trace_functions.c` 这个文件的用处？
+* 先看 `ftrace.c`
+* 再看 `trace_events_filter.c`
+* 
 
 
 
@@ -34,6 +36,16 @@
 
 
 ## TODO
+
+* `stop_machine.c` 文件用处？
+
+* `function_trace_init()` 函数中同时调用了
+
+  * `tracing_start_cmdline_trace()` 
+    * 这个函数是什么时候生效的？如何查看现象
+    * 是否可以通过设置 `set_ftrace_filter` 过滤掉
+  * `tracind_start_function_trace()`
+    * 这个函数是如何生效的？
 
 * `register_ftrace_command()` 这个函数的作用？
 
