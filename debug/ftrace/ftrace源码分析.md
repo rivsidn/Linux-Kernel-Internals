@@ -1,8 +1,22 @@
-* 先看 `ftrace.c`
-* 再看 `trace_events_filter.c`
+* `arch/x86/kernel/ftrace.c` 文件
+* 
+* 先看 `kernel/trace/ftrace.c`
+* 再看 `kernel/trace/trace_events_filter.c`
 * 
 
 
+
+
+
+
+
+```c
+int register_ftrace_function() {
+    __register_ftrace_function();
+    ftrace_startup(0);
+}
+
+```
 
 
 
@@ -19,14 +33,13 @@
   }
   
   
-  
   tracing_sched_wakeup_trace() 中最后两行的作用？运行的时候
   
   
   ```
-
   
-
+  
+  
 * 
 
 
@@ -36,6 +49,20 @@
 
 
 ## TODO
+
+* 内核中 `nmi` 会嵌套执行么？
+
+* `cpu_relax()` 实现？
+
+* 通过 `bochs` `qemu` 虚拟机追踪内核调试机制
+
+* `arch/x86/kernel/ftrace.c` 中的汇编代码
+
+* 
+
+* `mm/macess.c` 函数实现？
+
+* `framer` 信息？内核中的宏定义
 
 * `stop_machine.c` 文件用处？
 
