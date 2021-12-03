@@ -1,10 +1,32 @@
+* 动态`ftrace` 是如何实现的？
 * `arch/x86/kernel/ftrace.c` 文件
 * 
 * 先看 `kernel/trace/ftrace.c`
 * 再看 `kernel/trace/trace_events_filter.c`
 * 
+* `exception-tables.txt` 阅读
+* 
 
 
+
+```c
+
+//脚本
+recordmcount.pl
+
+```
+
+
+
+
+
+```c
+
+static int ftrace_mod_jmp();
+
+static int ftrace_modify_code();
+
+```
 
 
 
@@ -49,6 +71,10 @@ int register_ftrace_function() {
 
 
 ## TODO
+
+* 理解`ftrace.c` 中的汇编代码，.previous 用处
+
+* 理解 `framer`
 
 * 内核中 `nmi` 会嵌套执行么？
 
