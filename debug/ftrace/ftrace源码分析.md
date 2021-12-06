@@ -1,5 +1,5 @@
-* 先看 `kernel/trace/ftrace.c`
-* 再看 `kernel/trace/trace_events_filter.c`
+* 看延迟统计是怎么实现的？`trace_sched_wakeup.c` `trace_irqsoff.c`实现？
+* `kernel/trace/trace_events_filter.c`
 * 
 * `exception-tables.txt` 阅读
 * 
@@ -18,25 +18,11 @@ recordmcount.pl
 
 
 
-```c
-
-static int ftrace_mod_jmp();
-
-static int ftrace_modify_code();
-
-```
 
 
 
 
 
-```c
-int register_ftrace_function() {
-    __register_ftrace_function();
-    ftrace_startup(0);
-}
-
-```
 
 
 
