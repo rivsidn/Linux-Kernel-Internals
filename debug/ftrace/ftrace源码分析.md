@@ -1,6 +1,3 @@
-* 动态`ftrace` 是如何实现的？
-* `arch/x86/kernel/ftrace.c` 文件
-* 
 * 先看 `kernel/trace/ftrace.c`
 * 再看 `kernel/trace/trace_events_filter.c`
 * 
@@ -9,8 +6,9 @@
 
 
 
-```c
 
+
+```c
 //脚本
 recordmcount.pl
 
