@@ -6,6 +6,7 @@
 
 
 
+* 看延迟统计是怎么实现的？`trace_sched_wakeup.c` `trace_irqsoff.c`实现？
 * 看 `trace_events.c`
   * `ftrace_event_call()` 定义以及初始化？
 * 先看 `kernel/trace/ftrace.c`
@@ -28,25 +29,11 @@ recordmcount.pl
 
 
 
-```c
-
-static int ftrace_mod_jmp();
-
-static int ftrace_modify_code();
-
-```
 
 
 
 
 
-```c
-int register_ftrace_function() {
-    __register_ftrace_function();
-    ftrace_startup(0);
-}
-
-```
 
 
 
