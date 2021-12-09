@@ -1,3 +1,13 @@
+针对具体功能查看代码吧，先梳理一下自己想要实现的功能，然后针对性的去看代码。
+
+* 能否实现一种`trace point` 实现对 IP 地址的过滤功能？
+
+
+
+
+
+* 看 `trace_events.c`
+  * `ftrace_event_call()` 定义以及初始化？
 * 先看 `kernel/trace/ftrace.c`
 * 再看 `kernel/trace/trace_events_filter.c`
 * 
