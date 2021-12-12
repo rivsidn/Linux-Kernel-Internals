@@ -1,6 +1,11 @@
 针对具体功能查看代码吧，先梳理一下自己想要实现的功能，然后针对性的去看代码。
 
 * 能否实现一种`trace point` 实现对 IP 地址的过滤功能？
+* `trace_event_perf.c` `trace_events.c` `trace_events_filer.c` 之间关系？
+
+
+
+当前是不支持匹配明确的IP地址。
 
 
 
@@ -22,16 +27,7 @@
 ```c
 //脚本
 recordmcount.pl
-
 ```
-
-
-
-
-
-
-
-
 
 
 
@@ -149,3 +145,4 @@ recordmcount.pl
 
 
 
+l
