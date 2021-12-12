@@ -18,9 +18,6 @@ $ echo "((sig >= 10 && sig < 15) || sig == 17) && comm != bash" > filter
 
 
 
-##  TODO
-
-* `tracepoint` 和 `trace event` 之间还是没联系起来
 
 
 

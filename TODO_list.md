@@ -1,7 +1,10 @@
 ## 进行中
 
-* `tracepoint` `trace event` 实现？
-* 分析`ftrace` 实现？
+* `kdb` 调试
+* `2.6` 内核中挂载`ftrace`钩子函数 
+* `2.4` 内存管理
+
+
 
 
 

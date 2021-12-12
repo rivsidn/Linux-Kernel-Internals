@@ -97,10 +97,6 @@ recordmcount.pl
 
 * `ftrace()` 函数是在什么时候调用的？
 
-* `trace_events_filter.c` 文件实现？
-
-  * `filter_check_discard()` 实现
-
 * `dump_trace()` 实现？ `stacktrace.c` 实现
 
 * `ring_buffer` 实现梳理？
@@ -127,22 +123,3 @@ recordmcount.pl
 
 * `kmemcheck_bitfield_begin()` 使用？
 
-* 下边这些宏的用处
-
-  ```c
-  #define RB_FLAG_NORMAL	0UL
-  #define RB_FLAG_HEAD	1UL
-  #define RB_FLAG_UPDATE	2UL
-  
-  #define RB_FLAG_MASK	3UL
-  
-  #define RB_PAGE_MOVED	4UL
-  ```
-
-* 
-
-
-
-
-
-l

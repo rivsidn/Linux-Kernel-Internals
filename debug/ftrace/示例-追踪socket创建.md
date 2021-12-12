@@ -21,11 +21,3 @@ exec "$@"
 该脚本主要用于展示如何获取并设置进程号到`set_ftrace_pid` 中，后续我们可以根据需要修改这个脚本。
 
 
-
-
-
-## TODO
-
-* `inet_get_local_porr_range()` 这个函数的实现？
-* `udp_lib_get_port()` 函数实现？
-
