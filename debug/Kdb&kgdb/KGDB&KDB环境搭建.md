@@ -15,14 +15,12 @@ CONFIG_KDB_KEYBOARD=y		# 不使用键盘的设备可以忽略
 
 **注意：如果设置了CONFIG\_DEBUG\_RODATA 无法添加断点。**
 
-
-
 ## kdb 调试
 
 ### 进入kdb
 
 ```bash
-echo ttyS0 > /sys/module/kgdboc/paramters/kgdboc
+echo ttyS0 > /sys/module/kgdboc/parameters/kgdboc
 echo g > /proc/sysrq-trigger
 ```
 
