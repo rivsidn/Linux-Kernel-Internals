@@ -2,17 +2,17 @@
 
 从使用接口入手看代码。
 
-* `cpucache_t` 用处？
+* 
 
 
 
 * 
-* `BREAK_GFP_ORDER_HI` 宏的用处？
 * `smp_call_function_all_cpus()` 函数用处？
 * 
 
 
 
+- [ ] page_alloc.c
 - [ ] bootmem.c
 - [ ] filemap.c
 - [ ] highmem.c
@@ -24,10 +24,9 @@
 - [ ] mremap.c
 - [ ] numa.c
 - [x] oom_kill.c
-- [ ] page_alloc.c
 - [ ] page_io.c
 - [ ] shmem.c
-- [ ] slab.c
+- [x] slab.c
 - [ ] swap.c
 - [ ] swapfile.c
 - [ ] swap_state.c
