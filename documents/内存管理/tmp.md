@@ -1,7 +1,22 @@
+* 
+* `page_alloc.c` 代码阅读
+* 虚拟地址和物理地址？内核中何时用的物理地址，何时用的虚拟地址？
+
+
+
+
+
+```c
+-mask = 1 + ~mask
+```
+
 
 
 从使用接口入手看代码。
 
+* `paging_init()` 函数作用？
+* `free_area_init_core()` 作用？
+* `free_area_init_core()` 函数中 `alloc_bootmem_node()` 返回的地址是什么地址？
 * 
 
 
