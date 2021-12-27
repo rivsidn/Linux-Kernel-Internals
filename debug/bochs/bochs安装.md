@@ -12,6 +12,8 @@ sudo apt-get install bochs-x
 
 ## 源码安装
 
+以 `bochs-2.6.8` 为例。
+
 ```bash
 ./configure --enable-debugger --enable-disasm --enable-instrumentation
 make
@@ -27,7 +29,7 @@ make install
   > smm.cc:70:108: error: macro "BX_INSTR_PHY_ACCESS" passed 5 arguments, but takes just 4
   >      BX_NOTIFY_PHY_MEMORY_ACCESS(base, 4, BX_MEMTYPE_WB, BX_READ, BX_SMRAM_ACCESS, (Bit8u*)(&saved_state[n]));
 
-  修改
+  **修改**
 
   ```c
   rivsidn@rivsidn:~/Downloads/bochs/bochs-2.6.8$ git diff 
@@ -48,6 +50,16 @@ make install
    
    /* feedback from device units */
    #define BX_INSTR_INP(addr, len)               bx_instr_inp(addr, len)
+  ```
+
+* 错误信息
+
+  > ERROR: X windows gui was selected, but X windows libraries were not found.
+
+  **修改**
+
+  ```bash
+  sudo apt-get install libgtk2.0-dev
   ```
 
 * 

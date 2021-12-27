@@ -11,7 +11,7 @@
 | ------------------------------------- | ------------------------------------------------------------ |
 | q \| quit \| exit                     | 退出调试                                                     |
 | set \<regname\> = \<expr\>            | 设置寄存器的值                                               |
-| set eflags = \<expr\>                 | 设置eflags 寄存器的值                                        |
+| set eflags = \<expr\>                 | 设置eflags 寄存器的值，并不是所有的值都是可以设置的          |
 | set $cpu = \<N\>                      | 设置当前调试的CPU 号                                         |
 | set ${auto_disassemble} = 1 / 0       | 开启或者关闭自动反汇编，反汇编下一条要执行的指令             |
 | set u \| disasm \| dissemble on / off | 开启或者关闭自动反汇编                                       |
@@ -27,7 +27,7 @@
 | show off                              | 关闭所有显示开关                                             |
 | show dbg_all                          | 开启所有调试开关，通过源码发现就是打开中断、异常开关。<br/>该开关优于`show int` 的一点是可以查看中断号。 |
 | show dbg_none                         | 关闭所有调试开关                                             |
-| trace on / off                        | 输出或者关闭输出每条需要执行结束的指令，与 *set u \| disasm \| dissemble on/off* 相对 |
+| trace on / off                        | 使能或者去使能输出每条刚执行结束的指令，与 *set u \| disasm \| dissemble on/off* 相对 |
 | trace-reg on / off                    | 执行命令之后输出所有寄存器的值，开启或关闭                   |
 | trace-mem on / off                    | 每次执行指令输出内存访问信息功能开启或关闭                   |
 | u \| disasm /count \<start\>          | 反汇编`start` 开始的 `count` 条指令                          |
