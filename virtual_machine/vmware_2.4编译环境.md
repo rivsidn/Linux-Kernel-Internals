@@ -34,8 +34,14 @@
 
 ## 文件传输
 
+### ftp 模式
+
 * 本地搭建ftp服务器(ssh由于加密算法不匹配不能正常使用)
 * 虚拟机通过ftp服务器从本机获取文件
+
+### samba 模式
+
+**TODO**
 
 
 
@@ -63,6 +69,6 @@
 
 * [old linux镜像下载地址](https://soft.lafibre.info/)
 
-* [系统闪屏问题](https://blog.csdn.net/soft_lawrency/article/details/6375344)
+* [系统闪屏问题](https://webhostinggeeks.com/howto/how-to-resolve-init-id-x-respawning-too-fast-disabled-for-5-minutes/)
 
   
