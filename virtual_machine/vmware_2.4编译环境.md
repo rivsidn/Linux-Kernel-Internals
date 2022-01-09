@@ -4,9 +4,7 @@
 
 | 用户名  | 密码   |
 | ------- | ------ |
-| rivsidn | 123456 |
-
-
+| rivsidn | passwd |
 
 
 
@@ -39,11 +37,39 @@
 * 本地搭建ftp服务器(ssh由于加密算法不匹配不能正常使用)
 * 虚拟机通过ftp服务器从本机获取文件
 
-### samba 模式
+### SSH 模式(推荐)
 
-**TODO**
+* 通过`ftp` 将 `openssh-server-2.5.2p2-5.i386.rpm` 传输到虚拟机
 
+* 切换到`root` 用户安装并启动服务
 
+  ```bash
+  rpm -i openssh-server-2.5.2p2-5.i386.rpm
+  service sshd start
+  ```
+
+* 此时外部可以通过下命令链接虚拟机(不添加参数会出现加密算法不匹配问题)
+
+  ```bash
+  zssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -o Ciphers=aes256-cbc rivsidn@192.168.249.130
+  ```
+
+### nfs 模式(推荐)
+
+* 系统中创建并配置nfs 服务器
+
+  ```bash
+  # /etc/exports 中写入
+  /home/rivsidn/gitHub *(rw,sync,no_root_squash)
+  ```
+
+* 客户端挂载
+
+  ```bash
+  sudo mount -t nfs <ipAddress>:/home/rivsidn/gitHub /home/AAA/file
+  ```
+
+  
 
 ## 编译环境搭建
 
