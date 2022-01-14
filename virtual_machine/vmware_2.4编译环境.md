@@ -91,6 +91,18 @@
 
 
 
+## 疑难问题
+
+### ssh 拒绝访问
+
+通过`ipchains-save` 查看是由于添加了规则通过下边命令开启全通规则。
+
+```bash
+ipchains -I INPUT -j ACCEPT
+```
+
+
+
 ## 附录
 
 * [old linux镜像下载地址](https://soft.lafibre.info/)
