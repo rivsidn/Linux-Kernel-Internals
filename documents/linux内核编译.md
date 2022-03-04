@@ -4,6 +4,8 @@
 ```bash
 sudo apt-get install make 
 sudo apt-get install gcc 
+sudo apt-get install flex
+sudo apt-get install bison
 sudo apt-get install libncurses5-dev libncursesw5-dev
 sudo apt-get install libssl-dev
 
