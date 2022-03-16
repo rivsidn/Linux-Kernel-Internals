@@ -18,8 +18,6 @@
 
 ## TODO
 
-* `disksnoop.py` 代码中的 `msg.split()` 用处？
-
 
 
 
