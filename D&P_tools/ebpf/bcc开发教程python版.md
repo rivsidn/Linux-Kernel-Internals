@@ -21,20 +21,55 @@
   * 定义程序执行到探测点时候插入的钩子函数
   * 定义外部通信的通道，向通道中输出内容
 * `python` 程序部分
+  * 内嵌 `C` 程序
   * 定义程序的探测点，以及探测点对应执行的钩子函数
   * 获取通道中内容，输出到用户态
-  * 内嵌 `C` 程序
   * 其他与用户交互的内容，参数解析等
+
+
+
+### 基本示例
+
+```python
+#! /usr/bin/python
+
+from bcc import BPF
+from bcc.utils import printb
+
+# BPF program
+prog = """
+int hello(void *ctx) {
+	bpf_trace_printk("hello world\\n");
+	return 0;
+}
+"""
+
+# load BPF program
+b = BPF(text=prog)
+b.attach_kprobe(event="ip_rcv", fn_name="hello")
+
+# output
+while 1:
+    try:
+        (task, pid, cpu, flag, ts, msg) = b.trace_fields()
+    except ValueError:
+		continue
+    except KeyboardInterrupt:
+        exit()
+    printb(b"%-18.9f %-16s %-6d %s" % (ts, task, pid, msg))
+```
+
+
 
 
 
 ## 内嵌C程序
 
-### 嵌入C程序实现
+### 程序嵌入
 
+### 获取函数参数
 
-
-### 独立C程序实现
+### 获取内核信息
 
 
 
