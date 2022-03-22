@@ -96,6 +96,16 @@ $ sudo python hello_world.py
 
 
 
+## Q&A
+
+* `Could NOT find LibDebuginfod` 问题
+
+  发现是 llvm 版本导致的，`20.04` 保证用 llvm7 编译即可。
+
+* 
+
+
+
 ## 参考资料
 
 * [Installing BCC](https://github.com/iovisor/bcc/blob/master/INSTALL.md)
