@@ -1,8 +1,6 @@
 ## 安装
 
 ```bash
-sudo apt-get install libbpfcc-dev
-
 sudo apt-get install bpftrace
 ```
 
