@@ -55,25 +55,25 @@
 
 ### 脚本参数
 
-| 参数                  | 说明                                 | 补充解释       |
-| --------------------- | ------------------------------------ | -------------- |
-| patchN                | 输入补丁列表                         |                |
-| -h, --help            | 显示使用方法                         |                |
-| -a, --archversion     | 指定内核版本信息                     |                |
-| -r, --sourcerpm       | 指定内核源码rpm包                    |                |
-| -s, --sourcedir       | 指定内核源码路径                     |                |
-| -c, --config          | 指定内核配置文件                     |                |
-| -v, --vmlinux         | 指定内核之前的`vmlinux` 文件         | 此时不需要指定 |
-| -j, --jobs            | 指定`make` 运行的线程数              |                |
-| -t, --target          |                                      |                |
-| -n, --name            | 指定生成模块名称                     |                |
-| -o, --output          | 指定文件输出路径                     |                |
-| -d, --debug           | 使能`xtrace` 功能                    |                |
-| --oot-modules         | 内核代码外编译模块                   |                |
-| --oot-module-src      | 内核代码外编译模块，模块代码路径     |                |
-| -R, --non-replace     | 关闭内核`livepatch` 功能，默认是开启 |                |
-| --skip-cleanup        | 跳过编译后清空                       |                |
-| --skip-compiler-check | 跳过编译器版本匹配                   |                |
+| 参数                  | 说明                                    | 补充解释       |
+| --------------------- | --------------------------------------- | -------------- |
+| patchN                | 输入补丁列表                            |                |
+| -h, --help            | 显示使用方法                            |                |
+| -a, --archversion     | 指定内核版本信息                        |                |
+| -r, --sourcerpm       | 指定内核源码rpm包                       |                |
+| -s, --sourcedir       | 指定内核源码路径                        |                |
+| -c, --config          | 指定内核配置文件                        |                |
+| -v, --vmlinux         | 指定内核之前的`vmlinux` 文件            | 此时不需要指定 |
+| -j, --jobs            | 指定`make` 运行的线程数                 |                |
+| -t, --target          | 指定需要重新编译的部分(vmlinux或module) |                |
+| -n, --name            | 指定生成模块名称                        |                |
+| -o, --output          | 指定文件输出路径                        |                |
+| -d, --debug           | 使能`xtrace` 功能                       |                |
+| --oot-modules         | out-of-tree 模块编译                    |                |
+| --oot-module-src      | out-of-tree模块编译，模块代码路径       |                |
+| -R, --non-replace     | 关闭内核`livepatch` 功能，默认是开启    |                |
+| --skip-cleanup        | 跳过编译后清空                          |                |
+| --skip-compiler-check | 跳过编译器版本匹配                      |                |
 
 
 
