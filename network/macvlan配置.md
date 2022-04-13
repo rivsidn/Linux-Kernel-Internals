@@ -39,11 +39,11 @@ ip link set <name> up
 
 ```bash
 # 添加macvlan设备
-ip link add link eth1 dev eth_macvlan type macvlan
+ip link add link eth1 dev eth1_macvlan type macvlan
 # up该设备
-ip link set eth_macvlan up
+ip link set eth1_macvlan up
 # 配置ip地址
-ip addr add 172.31.3.137/24 dev eth_macvlan 
+ip addr add 172.31.3.137/24 dev eth1_macvlan
 ```
 
 
