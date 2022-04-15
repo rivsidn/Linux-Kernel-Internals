@@ -54,27 +54,31 @@ Themis(x86):/sys/kernel/tracing# cat trace
 
 
 
+## 报文接收
+
+
+
+| 返回值              | 解释                                                         |
+| ------------------- | ------------------------------------------------------------ |
+| RX_HANDLER_CONSUMED | 报文被消耗                                                   |
+| RX_HANDLER_ANOTHER  | 报文跳转到`__netif_receive_skb_core()`  `another_round` 处继续处理 |
+| RX_HANDLER_EXACT    |                                                              |
+| RX_HANDLER_PASS     | 报文继续往下执行，不做特殊处理                               |
 
 
 
 
 
 
-## 报文上送
 
 
-
-
-
-## 报文处理
-
-不同模式之间报文处理差异。
 
 
 
 ## Q&A
 
 * 设备配置时，mac地址是如何获得的？
+* 不同mac地址的`vlan` 差异？
 
 
 
