@@ -1,3 +1,71 @@
+## 重要数据结构
+
+### xfrm_input_afinfo
+
+```c
+struct xfrm_input_afinfo {
+	unsigned int		family;
+	struct module		*owner;
+	int					(*callback)(struct sk_buff *skb, u8 protocol, int err);
+};
+```
+
+### xfrm_state_afinfo
+
+```c
+struct xfrm_state_afinfo {
+    
+};
+```
+
+### xfrm_mode
+
+```c
+struct xfrm_mode {
+    
+};
+```
+
+
+
+### xfrm4_protocol
+
+`xfrm` 协议处理函数。
+
+```c
+struct xfrm4_protocol {
+	//处理函数，收包时调用
+	int (*handler)(struct sk_buff *skb);
+	//
+	int (*input_handler)(struct sk_buff *skb, int nexthdr, __be32 spi, int encap_type);
+	int (*cb_handler)(struct sk_buff *skb, int err);
+	int (*err_handler)(struct sk_buff *skb, u32 info);
+
+	struct xfrm4_protocol __rcu *next;
+	int priority;
+};
+```
+
+
+
+
+
+
+
+## TODO
+
+* `CONFIG_NET_IPVTI` 用处？
+* `xfrm_state_afino` 结构体作用？
+* 
+
+
+
+
+
+
+
+
+
 
 
 
