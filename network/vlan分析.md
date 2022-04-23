@@ -1,25 +1,23 @@
 
 
+`vlan` 功能和`br_vlan` 功能是分开的，先梳理`vlan` 功能。
+
+
+
+搭个实际的环境，梳理一下，当前`vlan` 部分代码的用处？
+
+报文是否是带有`tag`？
+
+什么时候带`tag`？什么时候不带？
+
+
+
 ## 重要函数
 
-| 函数名               | 解释                                   |
-| -------------------- | -------------------------------------- |
-| br_vlan_init()       | 创建桥时候初始化桥设备vlan相关结构体   |
-| br_vlan_add()        | 桥添加vlan                             |
-| nbp_vlan_add()       | 创建桥口的时候，添加桥口vlan相关结构体 |
-| nbp_vlan_add()       | 桥口添加vlan                           |
-| __vlan_add()         | 公共的vlan添加函数                     |
-|                      |                                        |
-| br_vlan_should_use() | 这个函数的用处？？                     |
-|                      |                                        |
-| br_handle_vlan()     |                                        |
-| br_allowed_ingress() |                                        |
-| br_allowed_egress()  |                                        |
-|                      |                                        |
-| __br_deliver()       | 本机向外发包                           |
-| __br_forward()       | 桥报文转发                             |
-| br_pass_frame_up()   | 报文上本机                             |
-|                      |                                        |
+|                  |        |
+| ---------------- | ------ |
+| skb_vlan_untag() | ？？？ |
+|                  |        |
 
 
 
@@ -36,8 +34,6 @@
 ### vlan_info
 
 ### vlan_group
-
-
 
 
 
