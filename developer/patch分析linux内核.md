@@ -23,6 +23,8 @@
   ```bash
   # patch导出
   git format-patch -1 b863ceb7ddce -o /home/rivsidn/linux-kernel/macvlan-linux
+  # 导出多个patch
+  git format-patch 69a4d0b.. 018cabb -o /home/rivsidn/linux-kernel/
   ```
 
   `-1` 表示导出当前`patch`，紧随其后的是需要导出的`patch` ID 以及`patch` 导出的目录。
