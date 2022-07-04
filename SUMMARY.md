@@ -7,6 +7,7 @@
 * [内核开发](developer/README.md)
   * [patch分析linux内核](developer/patch分析linux内核.md)
   * [tig工具使用](developer/tig工具使用.md)
+  * [内核漏洞更新](developer/内核漏洞更新.md)
 
 ## 内核
 
