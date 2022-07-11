@@ -32,6 +32,10 @@
 * 
 
 
+## 同步互斥
+
+* mutex\_lock\_interruptible() 实现
+
 
 ## 其他
 
