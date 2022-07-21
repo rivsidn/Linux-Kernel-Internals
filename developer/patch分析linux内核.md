@@ -2,6 +2,16 @@
 
 
 
+## 版本库整理
+
+```bash
+$ git remote -v
+origin	https://git.kernel.org/pub/scm/linux/kernel/git/history/history.git (fetch)
+origin	https://git.kernel.org/pub/scm/linux/kernel/git/history/history.git (push)
+```
+
+
+
 ## patch分析内核步骤
 
 * `patch`搜索
