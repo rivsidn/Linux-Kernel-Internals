@@ -9,6 +9,12 @@
   * [tig工具使用](developer/tig工具使用.md)
   * [内核漏洞更新](developer/内核漏洞更新.md)
 
+## 内核编译
+
+* [内核编译](compile/README.md)
+  * [bzImage转换成vmlinux](compile/bzImage转换成vmlinux.md)
+
+
 ## 内核
 
 * [内核](kernel/README.md)
