@@ -13,6 +13,7 @@
 
 * [内核编译](compile/README.md)
   * [bzImage转换成vmlinux](compile/bzImage转换成vmlinux.md)
+  * [内核链接脚本分析](compile/内核链接脚本分析.md)
 
 
 ## 内核
