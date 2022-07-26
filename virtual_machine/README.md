@@ -8,10 +8,10 @@
 
 ### Debian
 
-| Version | Code name | Relaese date | Kernel version | download                                                     |
-| ------- | --------- | ------------ | -------------- | ------------------------------------------------------------ |
-| 2.1     | Slink     | 9 March 1999 |                | [download](https://cdimage.debian.org/mirror/cdimage/archive/older-contrib/2.1/) |
-|         |           |              |                |                                                              |
+| Version | Code name | Relaese date   | Kernel version | download                                                     |
+| ------- | --------- | -------------- | -------------- | ------------------------------------------------------------ |
+| 2.1-r2  | Slink     | 9 March 1999   | 2.0.36         | [download](https://cdimage.debian.org/mirror/cdimage/archive/older-contrib/2.1/) |
+| 2.2-r0  | Potato    | 14 August 2000 | 2.2.17         | [download](https://cdimage.debian.org/mirror/cdimage/archive/older-contrib/2.2/) |
 
 
 
