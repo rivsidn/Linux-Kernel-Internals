@@ -36,6 +36,7 @@
 ## 虚拟机
 
 * [虚拟机](virtual_machine/README.md)
+  * [virtual-box安装](virtual_machine/virtual-box安装.md)
   * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
   * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
 
