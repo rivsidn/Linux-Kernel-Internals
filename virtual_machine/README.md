@@ -41,4 +41,4 @@
 ### 参考资料
 
 * [Red Hat Commercial Linux wiki](https://en.m.wikipedia.org/wiki/Red_Hat_Linux)
-* 
+* [Debian version history](https://en.wikipedia.org/wiki/Debian_version_history)
