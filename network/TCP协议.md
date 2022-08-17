@@ -2,11 +2,13 @@
 
 * `ip_proto_bind()` 做了什么？
 * `ip_proto_accept()`？
-* `tcp_accept()`
+* 
 * `tcp_write_wakeup()`
-* `tcp_rcv()`
+* `tcp_sequence()`
 
 
+
+0.98-annotation
 
 
 
