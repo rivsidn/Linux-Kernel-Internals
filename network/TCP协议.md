@@ -5,16 +5,19 @@
 * 
 * `tcp_write_wakeup()`
 * `tcp_sequence()`
+  * `delay_acks`作用？
+
 * `tcp_header{}` 中为什么这么安排？
 * 协议中的各种`seq` 怎么理解？
 * `reset_timer()`
 * `tcp_conn_request()`
   * 发送的`syn/ack` 报文何时释放
   * 放到`rqueue` 中的报文如何处理，是否还有其他放到`rqueue` 中的报文
-* `ip_queue_xmit()`
-  * 定时器作用
-  * 
+* `release_sock()`
+* `net_timer` 的作用？
+  * 为什么在这里设置`KEEPOPEN` 计时器
 
+* 
 
 
 
@@ -32,5 +35,4 @@
 * `memcpy_fromfs()`作用？
 * `ip` 协议
 * `ip` 路由
-
 
