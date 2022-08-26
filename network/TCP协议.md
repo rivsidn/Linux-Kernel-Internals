@@ -1,5 +1,3 @@
-
-
 * `ip_proto_bind()` 做了什么？
 * `ip_proto_accept()`？
 * `tcp_write_wakeup()`
@@ -16,12 +14,21 @@
   * 为什么在这里设置`KEEPOPEN` 计时器
 * `tcp_read_wakeup()`、`tcp_write_wakeup()` 作用？
 * 报文中的`syn`和`ack` 发送机制
+* `sk->inuse` 到底有什么用？
 
 
 
 
 
+```c
 
+if (sk->prot->rspace(sk) > (sk->window - sk->bytes_rcv + TCP_WINDOW_DIFF) || 
+    sk->window - sk->bytes_rcv < 2*sk->mtu)
+{
+	
+}
+
+```
 
 
 
