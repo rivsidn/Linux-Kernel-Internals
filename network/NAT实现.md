@@ -12,10 +12,12 @@
 
 ### TODO
 
+* 两个`hash`表分别是在什么时候查询的？
+* `iptables`规则
+* 挂载的钩子函数
 * `find_appropriate_src()`
-  * `get_unique_tuple()`
-
-* `nat`处理子链接问题
+* `get_unique_tuple()`
+* `nat helper`处理子链接问题
 * `netfilter` 实现
 
 
