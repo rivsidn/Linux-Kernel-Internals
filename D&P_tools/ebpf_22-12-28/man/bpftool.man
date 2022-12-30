@@ -1,0 +1,48 @@
+BPFTOOL(8)                                                                                                                                                              BPFTOOL(8)
+
+NAME
+       BPFTOOL - tool for inspection and simple manipulation of eBPF programs and maps
+                 用于查看和简单管理eBPF程序、map的工具
+
+SYNOPSIS
+          bpftool [OPTIONS] OBJECT { COMMAND | help }
+
+          bpftool batch file FILE
+
+          bpftool version
+
+          OBJECT := { map | program }
+
+          OPTIONS := { { -V | --version } | { -h | --help } | { -j | --json } [{ -p | --pretty }] }
+
+          MAP-COMMANDS := { show | dump | update | lookup | getnext | delete | pin | help }
+
+          PROG-COMMANDS := { show | dump jited | dump xlated | pin | help }
+
+DESCRIPTION
+          bpftool allows for inspection and simple modification of BPF objects on the system.
+
+          Note that format of the output of all tools is not guaranteed to be stable and should not be depended upon.
+	  工具的输出不保证稳定不变
+
+OPTIONS
+          -h, --help
+                 Print short help message (similar to bpftool help).
+		 输出帮助信息
+
+          -v, --version
+                 Print version number (similar to bpftool version).
+		 输出版本信息
+
+          -j, --json
+                 Generate JSON output. For commands that cannot produce JSON, this option has no effect.
+		 生成JSON格式输出
+
+          -p, --pretty
+                 Generate human-readable JSON output. Implies -j.
+		 生成易于阅读的格式
+
+SEE ALSO
+          bpftool-map(8), bpftool-prog(8)
+
+                                                                                                                                                                        BPFTOOL(8)
