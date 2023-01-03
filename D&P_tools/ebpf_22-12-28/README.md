@@ -12,9 +12,17 @@
 
 
 
+
+
+
+
 ## TODO
 
 * `BPF程序类型` 有什么意义，能决定什么？
+
+  梳理一下代码的执行流程
+
+* `bpf_prog{ bpf_func }` 这个变量是如何填充的？
 
 * `BPF内核` 部分可以使用的函数？ 
 
@@ -25,12 +33,12 @@
 
 * `BPF用户态` 部分可以使用的函数？是如何获取到的？
 
-  | 函数             | 说明                 |
-  | ---------------- | -------------------- |
-  | bpf_create_map() | 函数是在哪里封装的？ |
-  |                  |                      |
-
-  
+  | 函数             | 说明                         |
+  | ---------------- | ---------------------------- |
+  | bpf_create_map() | 函数是在哪里封装的？         |
+  | BPF_MOV64_REG()  | 下边这些指令是在哪里定义的？ |
+  | BPF_LD_ABS()     |                              |
+  | BPF_STX_MEM()    |                              |
 
 * `BPF attach类型` 的用处？
 
@@ -40,6 +48,12 @@
   * 各种不同类型的`BPF`程序用处
 
 * `pin` 到 `bpf` 文件系统的程序不会继续执行了，`pin` 这个动作有什么用？
+
+* In addition, file descriptors referring to eBPF objects can be transferred over UNIX domain sockets.
+
+  这个怎么操作？
+
+* 
 
 
 

@@ -270,9 +270,10 @@ DESCRIPTION
               On success, the operation returns zero.  On error, -1 is returned and errno is set to EINVAL, EPERM, ENOMEM, or E2BIG.  E2BIG indicates that the number of  elements
               in  the  map  reached the max_entries limit specified at map creation time.  EEXIST will be returned if flags specifies BPF_NOEXIST and the element with key already
               exists in the map.  ENOENT will be returned if flags specifies BPF_EXIST and the element with key doesn't exist in the map.
-TODO
+
        BPF_MAP_DELETE_ELEM
               The BPF_MAP_DELETE_ELEM command deleted the element whose key is key from the map referred to by the file descriptor fd.
+	      删除map中特定表项
 
                   int
                   bpf_delete_elem(int fd, const void *key)
@@ -290,6 +291,7 @@ TODO
        BPF_MAP_GET_NEXT_KEY
               The BPF_MAP_GET_NEXT_KEY command looks up an element by key in the map referred to by the file descriptor fd and sets the next_key pointer to the key  of  the  next
               element.
+	      查找下一个表项
 
                   int
                   bpf_get_next_key(int fd, const void *key, void *next_key)
@@ -310,6 +312,7 @@ TODO
        close(map_fd)
               Delete  the  map  referred  to by the file descriptor map_fd.  When the user-space program that created a map exits, all maps will be deleted automatically (but see
               NOTES).
+	      创建map的用户态程序退出时，所有的map都会自动删除。
 
    eBPF map types
        The following map types are supported:
@@ -336,6 +339,7 @@ TODO
                  user space.
 
               *  All array elements pre-allocated and zero initialized at init time
+	         数组中的所有元素在初始化的时候就已经提前申请好内存并初始化为0
 
               *  The key is an array index, and must be exactly four bytes.
 
@@ -358,11 +362,11 @@ TODO
        BPF_MAP_TYPE_PROG_ARRAY (since Linux 4.2)
               A  program  array  map  is a special kind of array map whose map values contain only file descriptors referring to other eBPF programs.  Thus, both the key_size and
               value_size must be exactly four bytes.  This map is used in conjunction with the bpf_tail_call() helper.
+	      该map与bpf_tail_call() 一起使用.
 
               This means that an eBPF program with a program array map attached to it can call from kernel side into
 
-                  void bpf_tail_call(void *context, void *prog_map,
-                                     unsigned int index);
+                  void bpf_tail_call(void *context, void *prog_map, unsigned int index);
 
               and therefore replace its own program flow with the one from the program at the given program array slot, if present.  This can be regarded as kind of a jump  table
               to  a  different eBPF program.  The invoked program will then reuse the same stack.  When a jump into the new program has been performed, it won't return to the old
@@ -379,6 +383,7 @@ TODO
 
    eBPF programs
        The BPF_PROG_LOAD command is used to load an eBPF program into the kernel.  The return value for this command is a new file descriptor associated with this eBPF program.
+       BPF_PROG_LOAD 用于将程序加载到内核中
 
            char bpf_log_buf[LOG_BUF_SIZE];
 
@@ -403,8 +408,7 @@ TODO
        prog_type is one of the available program types:
 
                   enum bpf_prog_type {
-                      BPF_PROG_TYPE_UNSPEC,        /* Reserve 0 as invalid
-                                                      program type */
+                      BPF_PROG_TYPE_UNSPEC,        /* Reserve 0 as invalid program type */
                       BPF_PROG_TYPE_SOCKET_FILTER,
                       BPF_PROG_TYPE_KPROBE,
                       BPF_PROG_TYPE_SCHED_CLS,
@@ -416,23 +420,30 @@ TODO
        The remaining fields of bpf_attr are set as follows:
 
        *  insns is an array of struct bpf_insn instructions.
+          insns 是bpf_insn 指令数组
 
        *  insn_cnt is the number of instructions in the program referred to by insns.
+          insn_cnt 是insns 指令个数
 
        *  license  is  a  license string, which must be GPL compatible to call helper functions marked gpl_only.  (The licensing rules are the same as for kernel modules, so that
           also dual licenses, such as "Dual BSD/GPL", may be used.)
+          证书必须与helper 函数兼容
 
        *  log_buf is a pointer to a caller-allocated buffer in which the in-kernel verifier can store the verification log.  This log is a multi-line string that can  be  checked
           by  the  program author in order to understand how the verifier came to the conclusion that the eBPF program is unsafe.  The format of the output can change at any time
           as the verifier evolves.
+	  是一个内存指针可以用于存储认证日志
 
        *  log_size size of the buffer pointed to by log_buf.  If the size of the buffer is not large enough to store all verifier messages, -1 is returned and  errno  is  set  to
           ENOSPC.
+	  日志buff长度
 
        *  log_level  verbosity  level of the verifier.  A value of zero means that the verifier will not provide a log; in this case, log_buf must be a NULL pointer, and log_size
           must be zero.
+	  认证器日志等级
 
        Applying close(2) to the file descriptor returned by BPF_PROG_LOAD will unload the eBPF program (but see NOTES).
+       使用close()关闭文件描述符的时候会卸载eBPF程序.
 
        Maps are accessible from eBPF programs and are used to exchange data between eBPF programs and between eBPF programs and user-space programs.  For example,  eBPF  programs
        can  process  various events (like kprobe, packets) and store their data into a map, and user-space programs can then fetch data from the map.  Conversely, user-space pro‐
@@ -445,6 +456,7 @@ TODO
 
        For example, a tracing program does not have the exact same subset of helper functions as a socket filter program (though they may have some  helpers  in  common).   Simi‐
        larly, the input (context) for a tracing program is a set of register values, while for a socket filter it is a network packet.
+       不同类型的eBPF程序可以调用的helper函数和传入的参数不同.
 
        The set of functions available to eBPF programs of a given type may increase in the future.
 
@@ -473,11 +485,11 @@ TODO
 
    Events
        Once a program is loaded, it can be attached to an event.  Various kernel subsystems have different ways to do so.
+       程序加载之后，可以绑定事件。不同的内核子系统有不同的绑定方式。
 
        Since Linux 3.19, the following call will attach the program prog_fd to the socket sockfd, which was created by an earlier call to socket(2):
 
-           setsockopt(sockfd, SOL_SOCKET, SO_ATTACH_BPF,
-                      &prog_fd, sizeof(prog_fd));
+           setsockopt(sockfd, SOL_SOCKET, SO_ATTACH_BPF, &prog_fd, sizeof(prog_fd));
 
        Since  Linux  4.1, the following call may be used to attach the eBPF program referred to by the file descriptor prog_fd to a perf event file descriptor, event_fd, that was
        created by a previous call to perf_event_open(2):
@@ -548,6 +560,7 @@ EXAMPLES
        }
 
        Some complete working code can be found in the samples/bpf directory in the kernel source tree.
+       可以在smples/bpf 目录下查找完成的工作代码.
 
 RETURN VALUE
        For a successful call, the return value depends on the operation:
@@ -597,31 +610,42 @@ CONFORMING TO
 
 NOTES
        In the current implementation, all bpf() commands require the caller to have the CAP_SYS_ADMIN capability.
+       当前实现，所有的bpf命令都需要拥有CAP_SYS_ADMIN 权限.
 
-       eBPF  objects (maps and programs) can be shared between processes.  For example, after fork(2), the child inherits file descriptors referring to the same eBPF objects.  In
-       addition, file descriptors referring to eBPF objects can be transferred over UNIX domain sockets.  File descriptors referring to eBPF objects  can  be  duplicated  in  the
-       usual way, using dup(2) and similar calls.  An eBPF object is deallocated only after all file descriptors referring to the object have been closed.
+       eBPF  objects (maps and programs) can be shared between processes.  For example, after fork(2), the child inherits file descriptors referring to the same eBPF objects.
+       In addition, file descriptors referring to eBPF objects can be transferred over UNIX domain sockets.
+       TODO: 文件描述符如何通过UNIX 套接字传输.
+       File descriptors referring to eBPF objects  can  be  duplicated  in  the usual way, using dup(2) and similar calls.
+       An eBPF object is deallocated only after all file descriptors referring to the object have been closed.
+       eBPF 只有在所有文件描述符都关闭的时候才会被释放.
 
        eBPF  programs  can be written in a restricted C that is compiled (using the clang compiler) into eBPF bytecode.  Various features are omitted from this restricted C, such
        as loops, global variables, variadic functions, floating-point numbers,  and  passing  structures  as  function  arguments.   Some  examples  can  be  found  in  the  sam‐
        ples/bpf/*_kern.c files in the kernel source tree.
+       eBPF程序可以通过受限的C编写，通过编译生成eBPF程序字节码. 在这个受限的C 程序中，好多特性是不被允许的.
 
        The  kernel contains a just-in-time (JIT) compiler that translates eBPF bytecode into native machine code for better performance.  The JIT compiler is disabled by default,
        but its operation can be controlled by writing one of the following integer strings to the file /proc/sys/net/core/bpf_jit_enable:
+       内核中的JIT 编译器可以将eBPF 字节码转换成本地机器编码用于提升性能. JIT编译器默认是关闭的，可以通过 /proc/sys/net/core/bpf_jit_enable 文件控制:
 
        0  Disable JIT compilation (default).
+          默认关闭
 
        1  Normal compilation.
+          正常编译
 
        2  Debugging mode.  The generated opcodes are dumped in hexadecimal into the kernel log.  These opcodes can then be disassembled using the  program  tools/net/bpf_jit_dis‐
           asm.c provided in the kernel source tree.
+	  调试模式. 生成的操作码会输出到内核日志中. 字节码可以通过 tools/net/bpf_jit_disasm.c 程序反汇编.
 
        JIT compiler for eBPF is currently available for the x86-64, arm64, and s390 architectures.
+       eBPF JIT 编译器当前只支持x86-64, arm64, s390架构.
 
 SEE ALSO
        seccomp(2), socket(7), tc(8), tc-bpf(8)
 
        Both classic and extended BPF are explained in the kernel source file Documentation/networking/filter.txt.
+       cBPE、eBPF 在内核代码文件filter.txt 下有介绍.
 
 COLOPHON
        This page is part of release 4.15 of the Linux man-pages project.  A description of the project, information about reporting bugs, and the latest version of this page, can
