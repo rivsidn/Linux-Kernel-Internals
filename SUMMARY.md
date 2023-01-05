@@ -33,6 +33,15 @@
   * [xfrm分析](network/xfrm分析.md)
   * 
 
+## 调试&性能工具
+
+* [调试&性能工具](D&P_tools/README.md)
+  * [BPF](D&P_tools/ebpf_22-12-28/README.md)
+    * [BPF程序基础](D&P_tools/ebpf_22-12-28/BPF程序基础.md)
+    * [BPF程序编译](D&P_tools/ebpf_22-12-28/BPF程序编译.md)
+    * [BPF MAP使用](D&P_tools/ebpf_22-12-28/BPF&#32;MAP使用.md)
+
+
 ## 虚拟机
 
 * [虚拟机](virtual_machine/README.md)
