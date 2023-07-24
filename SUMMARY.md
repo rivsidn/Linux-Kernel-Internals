@@ -49,4 +49,7 @@
   * [virtual-box安装](virtual_machine/virtual-box安装.md)
   * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
   * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
+  * [QEMU](virtual_machine/qemu/README.md)
+    * [QEMU内核调试环境](virtual_machine/qemu/QEMU内核调试环境.md)
+
 
