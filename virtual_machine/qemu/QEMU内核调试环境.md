@@ -100,3 +100,4 @@ qemu-system-x86_64 -kernel ./bzImage -initrd  ./rootfs.img -append "nokaslr cons
 ### 参考资料
 
 * [使用 GDB + Qemu 调试 Linux 内核](https://www.ebpf.top/post/qemu_gdb_busybox_debug_kernel/)
+
