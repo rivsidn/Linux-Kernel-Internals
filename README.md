@@ -14,5 +14,6 @@
 
 * `0.98` 精读0.98 内核网络协议代码
 * 以[链接](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4f11ada10d0ad3fd53e2bd67806351de63a4f9c3)为例分析内核commit的组成部分
+* 分析内核中的读写锁
 * 分析内核邮件列表
 
