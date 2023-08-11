@@ -13,6 +13,7 @@
 ## TODO
 
 * `0.98` 精读0.98 内核网络协议代码
+* linux内核是否支持优先级反转机制，如何实现的?
 * 以[链接](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=4f11ada10d0ad3fd53e2bd67806351de63a4f9c3)为例分析内核commit的组成部分
 * 分析内核中的读写锁
 * 梳理内核RCU实现
