@@ -47,7 +47,7 @@
 
 ## 制作磁盘镜像
 
-### **TODO：启动的启动不起来。**
+**TODO：启动的启动不起来。**
 
 
 
@@ -81,3 +81,4 @@ scp -o KexAlgorithms=diffie-hellman-group1-sha1 source.list yuchao@192.168.179.1
 
 * [老版ubuntu镜像下载地址](https://old-releases.ubuntu.com/releases/)
 * [国内老版本ubuntu更新http://mirrors.ustc.edu.cn/ubuntu-old-releases以及sources.list的配置方法](https://blog.csdn.net/snaking616/article/details/52966634)
+* [搭建Linux2.6内核调试环境](https://www.jianshu.com/p/a12c89a4f409)
