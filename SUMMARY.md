@@ -21,6 +21,11 @@
 * [内核](kernel/README.md)
   * [livepatch](livepatch/README.md)
 
+## 内核同步机制
+
+* [内核同步](locking/README.md)
+  * [内存屏障](locking/内存屏障.md)
+
 ## 内核网络
 
 * [内核网络](network/README.md)
