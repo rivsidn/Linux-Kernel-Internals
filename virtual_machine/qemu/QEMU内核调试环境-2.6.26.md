@@ -28,6 +28,9 @@ sudo apt-get update
 
 # 安装ssh，安装之后，可以登陆后台
 sudo apt-get install openssh-server
+sudo apt-get install lrzsz
+sudo apt-get install git
+
 # 安装编译依赖程序
 sudo apt-get install make gcc
 sudo apt-get install build-essential
@@ -66,6 +69,13 @@ sudo mknod mount/dev/ram b 1 0
 
 ### 编译并安装busybox
 
+* 获取busybox源码
+
+```bash
+sudo apt-get source busybox
+sudo chown -R <name>:<name> busybox
+```
+
 * 设置编译选项
 
   ```bash
@@ -102,7 +112,7 @@ sudo umount mount
 ## 系统启动
 
 ```bash
-qemu-system-x86_64 -nographic -kernel ./bzImage -initrd ./root.img -append "root=/dev/ram init=/bin/sh ramdisk=20480 console=ttyS0"
+qemu-system-x86_64 -nographic -kernel ./bzImage -initrd ./root.img -smp 2 -append "root=/dev/ram init=/bin/sh ramdisk=20480 console=ttyS0"
 ```
 
 
