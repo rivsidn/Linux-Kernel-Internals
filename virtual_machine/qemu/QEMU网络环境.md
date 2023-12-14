@@ -18,6 +18,12 @@ TODO: 一直不通.
 
 ### TAP模式
 
+* 安装`tunctl` 命令
+
+  ```bash
+  sudo apt-get install uml-utilities
+  ```
+
 * 宿主机网络设置
 
   ```bash
@@ -31,6 +37,9 @@ TODO: 一直不通.
   sudo ip link set brg0 promisc on
   sudo ip link set tap0 promisc on
   sudo ip link set <nic-name> promisc on	#同上
+  # 网卡up
+  sudo ip link set brg0 up
+  sudo ip link set tap0 up
   ```
 
 * 启动命令行
