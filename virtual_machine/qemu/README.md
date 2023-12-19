@@ -1,4 +1,45 @@
-## Ubuntu对应内核
+
+
+
+| 内核     | Ubuntu版本 | busybox版本 | 对应文件 |
+| ---    | ---      | ---       | ---  |
+| 2.6.12 | 5.10     | TODO      |
+
+
+## Ubuntu5.10内核调试
+
+### 安装源
+
+```
+deb http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-security main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-updates main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-proposed main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-backports main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-security main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-updates main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-proposed main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-backports main restricted universe multiverse
+```
+
+### 其他
+
+#### 文件传输
+
+```bash
+  # 文件传输(宿主机执行命令)
+  scp -o KexAlgorithms=diffie-hellman-group1-sha1 source.list yuchao@192.168.179.129:~/
+```
+
+
+
+
+
+
+## 附录
+
+### Ubuntu版本内核对应
 
 | Ubuntu版本 | 代号            | 内核版本号 |
 | ---------- | --------------- | ---------- |
@@ -41,19 +82,12 @@
 | 05.10      | Breezy Badger	 | 2.6.12   |
 | 05.04      | Hoary Hedgehog	 | 2.6.10   |
 | 04.10      | Warty Warthog	 | 2.6.8    |
-|  | 	|  |
 
-### 下载地址
+**下载地址:**
 
 * [Old Ubuntu Releases](https://old-releases.ubuntu.com/releases/)
 
 
-
-**TODO: 使用qemu 直接启动iso 文件.**
-
-
-
-## 附录
 
 ### 参考资料
 

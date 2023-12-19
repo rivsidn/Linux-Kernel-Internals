@@ -9,50 +9,50 @@
 ### 内核编译
 
 ```bash
-# 下载内核源代码
-wget http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/v4.x/linux-4.19.172.tar.gz
-# 需要开启该选项
-CONFIG_DEBUG_INFO=y 
+  # 下载内核源代码
+  wget http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/v4.x/linux-4.19.172.tar.gz
+  # 需要开启该选项
+  CONFIG_DEBUG_INFO=y 
 ```
 
 ### Busybox编译
 
 ```bash
-# 下载代码
-wget https://busybox.net/downloads/busybox-1.32.1.tar.bz2
-# 设置静态编译选项
-CONFIG_STATIC=y
-# 编译
-make && make install
+  # 下载代码
+  wget https://busybox.net/downloads/busybox-1.32.1.tar.bz2
+  # 设置静态编译选项
+  CONFIG_STATIC=y
+  # 编译
+  make && make install
 ```
 
 ### 创建启动文件系统
 
 ```bash
-# BusyBox目录下
-cd _install
-mkdir proc
-mkdir sys
-touch init
-chmod +x init
-find . | cpio -o --format=newc > ../rootfs.img
+  # BusyBox目录下
+  cd _install
+  mkdir proc
+  mkdir sys
+  touch init
+  chmod +x init
+  find . | cpio -o --format=newc > ../rootfs.img
 ```
 
 ```bash
-# init内容如下
-#!/bin/sh
-echo "{==DBG==} INIT SCRIPT"
-mkdir /tmp
-mount -t proc none /proc
-mount -t sysfs none /sys
-mount -t debugfs none /sys/kernel/debug
-mount -t tmpfs none /tmp
-
-mdev -s 
-echo -e "{==DBG==} Boot took $(cut -d' ' -f1 /proc/uptime) seconds"
-
-# normal user
-setsid /bin/cttyhack setuidgid 1000 /bin/sh
+  # init内容如下
+  #!/bin/sh
+  echo "{==DBG==} INIT SCRIPT"
+  mkdir /tmp
+  mount -t proc none /proc
+  mount -t sysfs none /sys
+  mount -t debugfs none /sys/kernel/debug
+  mount -t tmpfs none /tmp
+  
+  mdev -s 
+  echo -e "{==DBG==} Boot took $(cut -d' ' -f1 /proc/uptime) seconds"
+  
+  # normal user
+  setsid /bin/cttyhack setuidgid 1000 /bin/sh
 ```
 
 
@@ -62,14 +62,14 @@ setsid /bin/cttyhack setuidgid 1000 /bin/sh
 ### Qemu启动内核
 
 ```bash
-# 安装依赖软件
-sudo apt-get install qemu qemu-utils qemu-kvm virt-manager libvirt-daemon-system libvirt-clients bridge-utils
-
-# 系统启动
-qemu-system-x86_64 -kernel ./bzImage -initrd  ./rootfs.img -append "nokaslr console=ttyS0" -nographic
-
-# 启动调试
-qemu-system-x86_64 -kernel ./bzImage -initrd  ./rootfs.img -append "nokaslr console=ttyS0" -s -S -nographic
+  # 安装依赖软件
+  sudo apt-get install qemu qemu-utils qemu-kvm virt-manager libvirt-daemon-system libvirt-clients bridge-utils
+  
+  # 系统启动
+  qemu-system-x86_64 -kernel ./bzImage -initrd  ./rootfs.img -append "nokaslr console=ttyS0" -nographic
+  
+  # 启动调试
+  qemu-system-x86_64 -kernel ./bzImage -initrd  ./rootfs.img -append "nokaslr console=ttyS0" -s -S -nographic
 ```
 
 **参数说明：**

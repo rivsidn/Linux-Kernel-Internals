@@ -73,8 +73,8 @@ deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-backports 
 ### 常用命令
 
 ```bash
-# 文件传输(宿主机执行命令)
-scp -o KexAlgorithms=diffie-hellman-group1-sha1 source.list yuchao@192.168.179.129:~/
+  # 文件传输(宿主机执行命令)
+  scp -o KexAlgorithms=diffie-hellman-group1-sha1 source.list yuchao@192.168.179.129:~/
 ```
 
 ### 参考资料
