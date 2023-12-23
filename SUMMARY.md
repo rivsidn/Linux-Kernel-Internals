@@ -55,7 +55,6 @@
   * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
   * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
   * [QEMU](virtual_machine/qemu/README.md)
-    * [QEMU内核调试环境](virtual_machine/qemu/QEMU内核调试环境.md)
     * [QEMU内核调试环境-2.6.12](virtual_machine/qemu/QEMU内核调试环境-2.6.12.md)
     * [QEMU内核调试环境-2.6.26](virtual_machine/qemu/QEMU内核调试环境-2.6.26.md)
     * [QEMU内核调试环境-4.19](virtual_machine/qemu/QEMU内核调试环境-4.19.md)
