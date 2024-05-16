@@ -3,7 +3,7 @@
 ### 虚拟机安装(vmware)
 
 * 下载`ubuntu 5.10`版本镜像，[下载地址](https://old-releases.ubuntu.com/releases/)
-* 调整硬盘为IDE，否则无法正常安装
+* 调整硬盘为IDE，否则无法正常安装(**非常重要!!!**)
 
 ### 搭建文件传输环境
 
