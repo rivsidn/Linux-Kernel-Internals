@@ -20,7 +20,7 @@
 ```bash
   # 下载代码
   wget https://busybox.net/downloads/busybox-1.32.1.tar.bz2
-  # 设置静态编译选项
+  # make menuconfig 设置静态编译选项
   CONFIG_STATIC=y
   # 编译
   make && make install
@@ -54,6 +54,7 @@
   # normal user
   setsid /bin/cttyhack setuidgid 1000 /bin/sh
 ```
+ 如果要设置root 用户，需要将1000 设置为 0.
 
 
 

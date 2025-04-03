@@ -51,14 +51,16 @@
 ## 虚拟机
 
 * [虚拟机](virtual_machine/README.md)
-  * [virtual-box安装](virtual_machine/virtual-box安装.md)
-  * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
-  * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
   * [QEMU](virtual_machine/qemu/README.md)
     * [QEMU内核调试环境-2.6.12](virtual_machine/qemu/QEMU内核调试环境-2.6.12.md)
     * [QEMU内核调试环境-2.6.26](virtual_machine/qemu/QEMU内核调试环境-2.6.26.md)
     * [QEMU内核调试环境-4.19](virtual_machine/qemu/QEMU内核调试环境-4.19.md)
     * [QEMU网络环境](virtual_machine/qemu/QEMU网络环境.md)
     * [QEMU\_TODO](virtual_machine/qemu/QEMU_TODO.md)
+  * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
+  * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
 
+* [虚拟机搭建内核调试环境](virtual_machine_trace/README.md)
+  * [virsh命令](virtual_machine_trace/virsh命令.md)
+  * [QEMU内核调试环境-4.4.155](virtual_machine_trace/QEMU内核调试环境-4.4.155.md)
 

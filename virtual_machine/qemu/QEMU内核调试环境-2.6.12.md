@@ -58,6 +58,26 @@
 
 
 
+## virtual-manager图形界面
+
+
+
+```bash
+
+sudo make modules_install
+sudo make install
+
+sudo update-initramfs -c -k $(uname -r)
+sudo update-grub
+
+# 需要手动指定使用的initrd.img
+
+```
+
+
+
+
+
 
 
 ## 附录
@@ -82,6 +102,8 @@ deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-backports 
 ```bash
   # 文件传输(宿主机执行命令)
   scp -o KexAlgorithms=diffie-hellman-group1-sha1 source.list yuchao@192.168.179.129:~/
+  # (宿主机执行)
+  scp -o KexAlgorithms=diffie-hellman-group1-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa linux.tar.gz yuchao@192.168.122.126:~/
 ```
 
 ### 参考资料
