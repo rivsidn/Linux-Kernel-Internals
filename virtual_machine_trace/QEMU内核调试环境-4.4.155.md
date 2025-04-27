@@ -4,6 +4,24 @@
 
 此处选择的是安装`ubuntu-16.04.1-server`，可以在安装过程中选择`openssh-server`，系统安装好之后可以直接链接`SSH`。
 
+* 安装过程中不要启动`LVM`
+* 安装过程中需要启用`GRUB`
+
+
+
+### 安装编译工具链
+
+```bash
+# 文件传输
+sudo apt install lrzsz
+
+# 内核编译
+sudo apt install bc gcc make build-essential libncurses5-dev
+
+sudo apt install libssl-dev
+
+```
+
 
 
 ## 配置GDB调试
@@ -31,22 +49,23 @@
 
 
 
-## 内核编译环境准备
+## 配置代码同步
 
-希望能够在宿主机中使用虚拟机的编译工具链编译内核，这样的好处是：
+```bash
+# 虚拟机
+mkdir bare_repo_linux-4.4.155
+git init --bare
 
-1. 可以本地编辑代码，工具比较熟悉
-2. 本地编译能有较高的性能
-3. 过程比较容易控制
+# 宿主机
+git remote add ubuntu16.04 rivsidn@<ip>:~/bare_repo_linux-4.4.155
+git push ubuntu16.04
 
-实现方式为：
+# 代码同步
+cd linux-4.4.155
+git pull ~/bare_repo_linux-4.4.155 master
+```
 
-* 首先将内核代码导入虚拟机中，确保在虚拟机环境下内核可以正常编译通过
-* 到处内核编译工具链，本地使用
 
-
-
-### 虚拟机编译工具链导出
 
 
 

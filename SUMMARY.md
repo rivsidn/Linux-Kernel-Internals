@@ -16,6 +16,11 @@
   * [内核链接脚本分析](compile/内核链接脚本分析.md)
 
 
+## 文件系统
+
+* [文件系统](fs/README.md)
+  * [proc文件系统](fs/proc文件系统.md)
+
 ## 内核
 
 * [内核](kernel/README.md)
@@ -29,6 +34,7 @@
 ## 内核网络
 
 * [内核网络](network/README.md)
+  * [skb申请与释放](network/skb申请与释放.md)
   * [内核收包(二)](network/内核收包(二).md)
   * [vlan分析](network/vlan分析.md)
   * [br\_vlan分析](network/br_vlan分析.md)
@@ -62,5 +68,7 @@
 
 * [虚拟机搭建内核调试环境](virtual_machine_trace/README.md)
   * [virsh命令](virtual_machine_trace/virsh命令.md)
+  * [QEMU内核调试环境-2.6.12](virtual_machine_trace/QEMU内核调试环境-2.6.12.md)
   * [QEMU内核调试环境-4.4.155](virtual_machine_trace/QEMU内核调试环境-4.4.155.md)
+  * [gdb调试内核](virtual_machine_trace/gdb调试内核.md)
 

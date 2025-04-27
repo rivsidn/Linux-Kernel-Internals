@@ -67,7 +67,7 @@
 sudo make modules_install
 sudo make install
 
-sudo update-initramfs -c -k $(uname -r)
+sudo update-initramfs -c -k "2.6.12-debug"
 sudo update-grub
 
 # 需要手动指定使用的initrd.img
