@@ -14,6 +14,7 @@
 * [内核编译](compile/README.md)
   * [bzImage转换成vmlinux](compile/bzImage转换成vmlinux.md)
   * [内核链接脚本分析](compile/内核链接脚本分析.md)
+  * [kconfig语法](compile/kconfig语法.md)
 
 
 ## 文件系统
@@ -21,10 +22,11 @@
 * [文件系统](fs/README.md)
   * [proc文件系统](fs/proc文件系统.md)
 
-## 内核
+## 内存管理
 
-* [内核](kernel/README.md)
-  * [livepatch](livepatch/README.md)
+* [内存管理](mem/README.md)
+  * [内存问题定位](mem/debug/README.md)
+    * [PAGEALLOC调试选项](mem/debug/PAGEALLOC调试选项.md)
 
 ## 内核同步机制
 
@@ -42,7 +44,6 @@
   * [macvtap分析](network/macvtap分析.md)
   * [synproxy源码分析](network/synproxy源码分析.md)
   * [xfrm分析](network/xfrm分析.md)
-  * 
 
 ## 调试&性能工具
 
