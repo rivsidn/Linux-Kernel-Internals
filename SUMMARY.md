@@ -27,6 +27,7 @@
 * [内存管理](mem/README.md)
   * [内存问题定位](mem/debug/README.md)
     * [PAGEALLOC调试选项](mem/debug/PAGEALLOC调试选项.md)
+    * [SLUB_DEBUG调试选项](mem/debug/SLUB_DEBUG调试选项.md)
 
 ## 内核同步机制
 
@@ -55,6 +56,13 @@
     * [BPF工具使用](D&P_tools/ebpf_22-12-28/BPF工具使用.md)
 
 
+## 内核调试环境
+
+* [内核调试环境](kernel_debug/README.md)
+  * [4.4.155内核调试](kernel_debug/4.4.155/README.md)
+    * [搭建内核调试环境](kernel_debug/4.4.155/搭建内核调试环境.md)
+
+
 ## 虚拟机
 
 * [虚拟机](virtual_machine/README.md)
@@ -66,6 +74,7 @@
     * [QEMU\_TODO](virtual_machine/qemu/QEMU_TODO.md)
   * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
   * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
+  * [vitrual-manager安装](virtual_machine/virtual-manager安装.md)
 
 * [虚拟机搭建内核调试环境](virtual_machine_trace/README.md)
   * [virsh命令](virtual_machine_trace/virsh命令.md)
