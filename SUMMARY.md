@@ -24,10 +24,11 @@
 
 ## 内存管理
 
-* [内存管理](mem/README.md)
-  * [内存问题定位](mem/debug/README.md)
-    * [PAGEALLOC调试选项](mem/debug/PAGEALLOC调试选项.md)
-    * [SLUB_DEBUG调试选项](mem/debug/SLUB_DEBUG调试选项.md)
+* [内存管理](mm/README.md)
+  * [SLUB内存管理](mm/SLUB内存管理.md)
+  * [内存问题定位](mm/debug/README.md)
+    * [PAGEALLOC调试选项](mm/debug/PAGEALLOC调试选项.md)
+    * [SLUB_DEBUG调试选项](mm/debug/SLUB_DEBUG调试选项.md)
 
 ## 内核同步机制
 
@@ -60,6 +61,7 @@
 
 * [内核调试环境](kernel_debug/README.md)
   * [4.4.155内核调试](kernel_debug/4.4.155/README.md)
+    * [搭建内核编译环境](kernel_debug/4.4.155/搭建内核编译环境.md)
     * [搭建内核调试环境](kernel_debug/4.4.155/搭建内核调试环境.md)
 
 
