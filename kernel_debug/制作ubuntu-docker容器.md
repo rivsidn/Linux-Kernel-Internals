@@ -12,6 +12,9 @@ sudo debootstrap --arch=i386 breezy ubuntu-5.10-rootfs http://old-releases.ubunt
 
 ```
 
+//临时记录
+sudo mount -o remount,rw,suid,dev /media/yuchao/SSD1-ext4
+
 ## 制作docker镜像
 
 ### 创建Dockerfile
