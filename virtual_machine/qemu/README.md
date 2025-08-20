@@ -42,6 +42,29 @@ deb-src http://mirrors.ustc.edu.cn/ubuntu-old-releases/ubuntu/ breezy-backports 
 
 ### Ubuntu版本内核对应
 
+| Debian 版本 | 发布日期    | 默认内核版本   | 下载链接                                          |
+| --------- | ------- | -------- | --------------------------------------------- |
+| **0.91**  | 1994-01 | 0.99pl15 | [下载](https://archive.org/details/debian_0.91) |
+| **1.1**   | 1996-06 | 2.0.32   | [下载](https://archive.org/details/debian-1.1)  |
+| **1.2**   | 1996-12 | 2.0.34   | [下载](https://archive.org/details/debian-1.2)  |
+| **1.3**   | 1997-06 | 2.0.36   | [下载](https://archive.org/details/debian-1.3)  |
+| **2.0**   | 1998-07 | 2.2.16   | [下载](https://archive.org/details/debian-2.0)  |
+| **2.1**   | 1999-03 | 2.2.17   | [下载](https://archive.org/details/debian-2.1)  |
+| **2.2**   | 2000-08 | 2.2.19   | [下载](https://archive.org/details/debian-2.2)  |
+| **3.0**   | 2002-07 | 2.4.18   | [下载](https://archive.org/details/debian-3.0)  |
+| **3.1**   | 2005-06 | 2.6.8    | [下载](https://archive.org/details/debian-3.1)  |
+| **4.0**   | 2007-04 | 2.6.18   | [下载](https://archive.org/details/debian-4.0)  |
+| **5.0**   | 2009-02 | 2.6.26   | [下载](https://archive.org/details/debian-5.0)  |
+| **6.0**   | 2011-02 | 2.6.32   | [下载](https://archive.org/details/debian-6.0)  |
+| **7.0**   | 2013-05 | 3.2      | [下载](https://archive.org/details/debian-7.0)  |
+| **8.0**   | 2015-04 | 3.16     | [下载](https://archive.org/details/debian-8.0)  |
+| **9.0**   | 2017-06 | 4.9      | [下载](https://archive.org/details/debian-9.0)  |
+| **10.0**  | 2019-07 | 4.19     | [下载](https://archive.org/details/debian-10.0) |
+| **11.0**  | 2021-08 | 5.10     | [下载](https://archive.org/details/debian-11.0) |
+| **12.0**  | 2023-06 | 6.1      | [下载](https://archive.org/details/debian-12.0) |
+| **13.0**  | 2025-08 | 6.4      | [下载](https://archive.org/details/debian-13.0) |
+
+
 | Ubuntu版本 | 代号            | 内核版本号 |
 | ---------- | --------------- | ---------- |
 | 23.10      | Mantic Minotaur | 6.5        |

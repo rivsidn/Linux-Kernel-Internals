@@ -60,6 +60,10 @@
 ## 内核调试环境
 
 * [内核调试环境](kernel_debug/README.md)
+  * [构建调试环境](kernel_debug/构建调试环境.md)
+  * [debootstrap命令](kernel_debug/debootstrap命令.md)
+  * [制作ubuntu-docker容器](kernel_debug/制作ubuntu-docker容器.md)
+  * [构建QEMU根文件系统](kernel_debug/构建QEMU根文件系统.md)
   * [4.4.155内核调试](kernel_debug/4.4.155/README.md)
     * [搭建内核编译环境](kernel_debug/4.4.155/搭建内核编译环境.md)
     * [搭建内核调试环境](kernel_debug/4.4.155/搭建内核调试环境.md)
