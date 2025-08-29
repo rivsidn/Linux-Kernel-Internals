@@ -74,12 +74,6 @@ sudo update-grub
 
 ```
 
-
-
-
-
-
-
 ## 附录
 
 ### ubuntu5.10源配置

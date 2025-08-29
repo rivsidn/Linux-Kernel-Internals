@@ -16,6 +16,10 @@
   * [内核链接脚本分析](compile/内核链接脚本分析.md)
   * [kconfig语法](compile/kconfig语法.md)
 
+## 内核初始化
+
+* [内核初始化](start_kernel/README.md)
+  * [proc文件系统](start_kernel/proc文件系统.md)
 
 ## 文件系统
 
@@ -25,6 +29,8 @@
 ## 内存管理
 
 * [内存管理](mm/README.md)
+  * [内存管理硬件基础](mm/内存管理硬件基础.md)
+  * [SLAB内存管理](mm/SLAB内存管理.md)
   * [SLUB内存管理](mm/SLUB内存管理.md)
   * [内存问题定位](mm/debug/README.md)
     * [PAGEALLOC调试选项](mm/debug/PAGEALLOC调试选项.md)
@@ -49,13 +55,12 @@
 
 ## 调试&性能工具
 
-* [调试&性能工具](D&P_tools/README.md)
-  * [BPF](D&P_tools/ebpf_22-12-28/README.md)
-    * [BPF程序基础](D&P_tools/ebpf_22-12-28/BPF程序基础.md)
-    * [BPF程序编译](D&P_tools/ebpf_22-12-28/BPF程序编译.md)
-    * [BPF MAP使用](D&P_tools/ebpf_22-12-28/BPF&#32;MAP使用.md)
-    * [BPF工具使用](D&P_tools/ebpf_22-12-28/BPF工具使用.md)
-
+* [调试&性能工具](D-P_tools/README.md)
+  * [BPF](D-P_tools/ebpf_22-12-28/README.md)
+    * [BPF程序基础](D-P_tools/ebpf_22-12-28/BPF程序基础.md)
+    * [BPF程序编译](D-P_tools/ebpf_22-12-28/BPF程序编译.md)
+    * [BPF-MAP使用](D-P_tools/ebpf_22-12-28/BPF-MAP使用.md)
+    * [BPF工具使用](D-P_tools/ebpf_22-12-28/BPF工具使用.md)
 
 ## 内核调试环境
 
@@ -64,10 +69,10 @@
   * [debootstrap命令](kernel_debug/debootstrap命令.md)
   * [制作ubuntu-docker容器](kernel_debug/制作ubuntu-docker容器.md)
   * [构建QEMU根文件系统](kernel_debug/构建QEMU根文件系统.md)
+  * [内核调试-2.6.12](kernel_debug/内核调试-2.6.12.md)
   * [4.4.155内核调试](kernel_debug/4.4.155/README.md)
     * [搭建内核编译环境](kernel_debug/4.4.155/搭建内核编译环境.md)
     * [搭建内核调试环境](kernel_debug/4.4.155/搭建内核调试环境.md)
-
 
 ## 虚拟机
 
@@ -81,6 +86,7 @@
   * [vmware\_2.4编译环境](virtual_machine/vmware_2.4编译环境.md)
   * [vmware\_2.6编译环境](virtual_machine/vmware_2.6编译环境.md)
   * [vitrual-manager安装](virtual_machine/virtual-manager安装.md)
+  * [docker常用命令](virtual_machine/docker常用命令.md)
 
 * [虚拟机搭建内核调试环境](virtual_machine_trace/README.md)
   * [virsh命令](virtual_machine_trace/virsh命令.md)
