@@ -24,6 +24,7 @@
 
 
 - CONFIG_SYSTEM_TRUSTED_KEYS 这个配置的功能.
+- 内核中的工作队列机制
 
 
 
