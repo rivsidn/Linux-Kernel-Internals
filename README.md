@@ -28,6 +28,13 @@
 - 内核中的工作队列机制
   - 没有完全梳理清楚
 - 内核中的定时器
+- epoll 内核实现
+- Linux 内核的许可证认证，这两种有什么区别
+  ```c
+  EXPORT_SYMBOL_GPL(destroy_workqueue);
+  EXPORT_SYMBOL(schedule_work);
+  ```
+  是如何限制的内核模块访问
 - 内核中获取cpu号的函数之间区别
   - smp...
   - raw_smp..

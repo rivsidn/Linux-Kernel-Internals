@@ -21,6 +21,12 @@
 * [内核初始化](start_kernel/README.md)
   * [proc文件系统](start_kernel/proc文件系统.md)
 
+## 进程
+
+* [进程](task/README.md)
+  * [工作队列](task/工作队列.md)
+  * [进程状态](task/进程状态.md)
+
 ## 文件系统
 
 * [文件系统](fs/README.md)
@@ -40,6 +46,7 @@
 
 * [内核同步](locking/README.md)
   * [内存屏障](locking/内存屏障.md)
+  * [自旋锁](locking/自旋锁.md)
 
 ## 内核网络
 
@@ -93,4 +100,9 @@
   * [QEMU内核调试环境-2.6.12](virtual_machine_trace/QEMU内核调试环境-2.6.12.md)
   * [QEMU内核调试环境-4.4.155](virtual_machine_trace/QEMU内核调试环境-4.4.155.md)
   * [gdb调试内核](virtual_machine_trace/gdb调试内核.md)
+ 
+## 其他
+
+* [其他](miscs/README.md)
+  * [获取当前运行CPU的几种方式](miscs/获取当前运行CPU的几种方式.md)
 
