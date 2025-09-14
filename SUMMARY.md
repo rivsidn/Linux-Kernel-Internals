@@ -27,6 +27,12 @@
   * [工作队列](task/工作队列.md)
   * [进程状态](task/进程状态.md)
 
+### 进程间通信
+
+  * [进程间信号](task/进程间信号.md)
+
+
+
 ## 文件系统
 
 * [文件系统](fs/README.md)
@@ -81,17 +87,18 @@
     * [BPF-MAP使用](D-P_tools/ebpf_22-12-28/BPF-MAP使用.md)
     * [BPF工具使用](D-P_tools/ebpf_22-12-28/BPF工具使用.md)
 
-## 内核调试环境
+## 内核调试
 
-* [内核调试环境](kernel_debug/README.md)
-  * [构建调试环境](kernel_debug/构建调试环境.md)
-  * [debootstrap命令](kernel_debug/debootstrap命令.md)
-  * [制作ubuntu-docker容器](kernel_debug/制作ubuntu-docker容器.md)
-  * [构建QEMU根文件系统](kernel_debug/构建QEMU根文件系统.md)
-  * [内核调试-2.6.12](kernel_debug/内核调试-2.6.12.md)
-  * [4.4.155内核调试](kernel_debug/4.4.155/README.md)
-    * [搭建内核编译环境](kernel_debug/4.4.155/搭建内核编译环境.md)
-    * [搭建内核调试环境](kernel_debug/4.4.155/搭建内核调试环境.md)
+* [内核调试](内核调试/README.md)
+  * [gdb命令](内核调试/gdb命令.md)
+  * [构建调试环境](内核调试/构建调试环境.md)
+  * [debootstrap命令](内核调试/debootstrap命令.md)
+  * [制作ubuntu-docker容器](内核调试/制作ubuntu-docker容器.md)
+  * [构建QEMU根文件系统](内核调试/构建QEMU根文件系统.md)
+  * [内核调试-2.6.12](内核调试/内核调试-2.6.12.md)
+  * [4.4.155内核调试](内核调试/4.4.155/README.md)
+    * [搭建内核编译环境](内核调试/4.4.155/搭建内核编译环境.md)
+    * [搭建内核调试环境](内核调试/4.4.155/搭建内核调试环境.md)
 
 ## 虚拟机
 
