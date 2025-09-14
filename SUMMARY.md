@@ -42,11 +42,22 @@
     * [PAGEALLOC调试选项](mm/debug/PAGEALLOC调试选项.md)
     * [SLUB_DEBUG调试选项](mm/debug/SLUB_DEBUG调试选项.md)
 
+## 中断与软中断
+
+* [中断软中断](中断与软中断/README.md)
+  * [内核软中断](中断与软中断/内核软中断.md)
+  * [定时器实现](中断与软中断/定时器实现.md)
+
+## 内核数据结构
+
+* [内核数据结构](内核数据结构/README.md)
+
 ## 内核同步机制
 
-* [内核同步](locking/README.md)
-  * [内存屏障](locking/内存屏障.md)
-  * [自旋锁](locking/自旋锁.md)
+* [内核同步](内核同步机制/README.md)
+  * [内存屏障](内核同步机制/内存屏障.md)
+  * [等待队列](内核同步机制/等待队列.md)
+  * [自旋锁](内核同步机制/自旋锁.md)
 
 ## 内核网络
 
@@ -59,6 +70,7 @@
   * [macvtap分析](network/macvtap分析.md)
   * [synproxy源码分析](network/synproxy源码分析.md)
   * [xfrm分析](network/xfrm分析.md)
+  * [桥转发fdb表](network/桥转发fdb表.md)
 
 ## 调试&性能工具
 
