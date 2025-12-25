@@ -19,7 +19,6 @@
 ## 内核初始化
 
 - [内核初始化](start_kernel/README.md)
-  - [proc文件系统](start_kernel/proc文件系统.md)
 
 ## 进程管理
 
@@ -59,6 +58,12 @@
 - [内核数据结构](内核数据结构/README.md)
   - [链表](内核数据结构/链表.md)
 
+## 内核加密算法
+
+- [内核加密算法](内核加密算法/README.md)
+  - [加密接口](内核加密算法/加密接口.md)
+  - [sm2算法内核编译](内核加密算法/sm2算法内核编译.md)
+
 ## 内核同步机制
 
 - [内核同步](内核同步机制/README.md)
@@ -68,6 +73,17 @@
   - [内存屏障实例](内核同步机制/内存屏障实例.md)
   - [等待队列](内核同步机制/等待队列.md)
   - [自旋锁](内核同步机制/自旋锁.md)
+
+## 内核交互
+
+- [内核交互](内核交互/README.md)
+  - [ioctl使用](内核交互/ioctl使用.md)
+  - [传统netlink](内核交互/传统netlink/README.md)
+    - [netlink基础](内核交互/传统netlink/netlink基础.md)
+    - [rtnetlink使用](内核交互/传统netlink/rtnetlink使用.md)
+  - [通用netlink使用](内核交互/通用netlink/README.md)
+    - [通用netlink内核注册](内核交互/通用netlink/通用netlink内核注册.md)
+    - [通用netlink用户通信](内核交互/通用netlink/通用netlink用户通信.md)
 
 ## 内核网络
 
@@ -81,6 +97,11 @@
   - [synproxy源码分析](network/synproxy源码分析.md)
   - [xfrm分析](network/xfrm分析.md)
   - [桥转发fdb表](network/桥转发fdb表.md)
+
+### netfilter
+
+  - [netfilter](network/netfilter/SUMMARY.md)
+    - [链接跟踪会话老化](network/netfilter/链接跟踪会话老化.md)
 
 ## 调试&性能工具
 
