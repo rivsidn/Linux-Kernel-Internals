@@ -20,6 +20,10 @@
 
 - [内核初始化](start_kernel/README.md)
 
+## 内核驱动
+
+- [内核驱动](内核驱动/README.md)
+
 ## 进程管理
 
 - [进程管理](进程管理/README.md)
@@ -27,6 +31,7 @@
   - [进程状态](进程管理/进程状态.md)
   - [工作队列](进程管理/工作队列.md)
   - [等待队列](进程管理/等待队列.md)
+  - [内核线程](进程管理/内核线程.md)
 
 ### 进程间通信
 
@@ -79,8 +84,8 @@
 
 - [内核交互](内核交互/README.md)
   - [ioctl使用](内核交互/ioctl使用.md)
+  - [netlink基础](内核交互/netlink基础.md)
   - [传统netlink](内核交互/传统netlink/README.md)
-    - [netlink基础](内核交互/传统netlink/netlink基础.md)
     - [rtnetlink使用](内核交互/传统netlink/rtnetlink使用.md)
   - [通用netlink使用](内核交互/通用netlink/README.md)
     - [通用netlink内核注册](内核交互/通用netlink/通用netlink内核注册.md)
@@ -106,6 +111,8 @@
       - [链接跟踪数据结构](内核网络/netfilter/链接跟踪/链接跟踪数据结构.md)
       - [链接跟踪会话创建](内核网络/netfilter/链接跟踪/链接跟踪会话创建.md)
       - [链接跟踪会话老化](内核网络/netfilter/链接跟踪/链接跟踪会话老化.md)
+      - [链接跟踪netlink机制](内核网络/netfilter/链接跟踪/netlink/README.md)
+        - [会话查询](内核网络/netfilter/链接跟踪/netlink/会话查询.md)
       - [链接跟踪会话杂七杂八](内核网络/netfilter/链接跟踪/链接跟踪会话杂七杂八.md)
 
 ## 调试&性能工具
