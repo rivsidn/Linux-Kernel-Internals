@@ -152,6 +152,10 @@
   - [内核GDB脚本](内核调试/内核GDB脚本.md)
   - [内核GDB脚本实现](内核调试/内核GDB脚本实现.md)
 
+### lockdep
+
+  - [lockdep实现](内核调试/lockdep实现.md)
+  - [lockdep分析](内核调试/lockdep分析.md)
 
 ## 虚拟机
 
