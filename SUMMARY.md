@@ -129,6 +129,7 @@
 ## 调试&性能工具
 
 - [调试&性能工具](D-P_tools/README.md)
+  - [eBPF](D-P_tools/ebpf/README.md)
   - [BPF](D-P_tools/ebpf_22-12-28/README.md)
     - [BPF程序基础](D-P_tools/ebpf_22-12-28/BPF程序基础.md)
     - [BPF程序编译](D-P_tools/ebpf_22-12-28/BPF程序编译.md)
