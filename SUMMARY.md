@@ -128,13 +128,27 @@
 
 ## 调试&性能工具
 
-- [调试&性能工具](D-P_tools/README.md)
-  - [eBPF](D-P_tools/ebpf/README.md)
-  - [BPF](D-P_tools/ebpf_22-12-28/README.md)
-    - [BPF程序基础](D-P_tools/ebpf_22-12-28/BPF程序基础.md)
-    - [BPF程序编译](D-P_tools/ebpf_22-12-28/BPF程序编译.md)
-    - [BPF-MAP使用](D-P_tools/ebpf_22-12-28/BPF-MAP使用.md)
-    - [BPF工具使用](D-P_tools/ebpf_22-12-28/BPF工具使用.md)
+- [调试&性能工具](性能调试工具/README.md)
+
+### eBPF
+
+  - [eBPF](性能调试工具/ebpf/README.md)
+  - [BPF](性能调试工具/ebpf_22-12-28/README.md)
+    - [BPF程序基础](性能调试工具/ebpf_22-12-28/BPF程序基础.md)
+    - [BPF程序编译](性能调试工具/ebpf_22-12-28/BPF程序编译.md)
+    - [BPF-MAP使用](性能调试工具/ebpf_22-12-28/BPF-MAP使用.md)
+    - [BPF工具使用](性能调试工具/ebpf_22-12-28/BPF工具使用.md)
+
+### kgdb&kdb
+
+  - [kgdb](性能调试工具/kgdb/README.md)
+    - [环境搭建](性能调试工具/kgdb/环境搭建.md)
+    - [kdb使用](性能调试工具/kgdb/kdb使用.md)
+
+
+### perf
+
+
 
 ## 内核调试
 
