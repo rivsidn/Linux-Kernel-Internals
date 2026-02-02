@@ -1,4 +1,18 @@
-## 命令整理
+
+基于 2.6.35.6 内核.
+
+
+## 使能
+
+内核使能编译选线后，添加启动参数 `kgdboc=ttyS0` (使用串口输入).
+
+| 参数         | 说明                       |
+|--------------|----------------------------|
+| kgdboc=ttyS0 | 串口输入，波特率默认为9600 |
+| kgdboc=kbd   | 键盘输入                   |
+
+
+## 命令汇总
 
 基于`2.6.35.6` 内核。
 
@@ -40,11 +54,11 @@
 | summary  |                            | 显示系统信息                                                         |
 | grephelp |                            | 显示 grep 信息                                                       |
 | sr       | \<key\>                    | 等同于向`/proc/sysrq-trigger` 中写值                                 |
-|          |                            |                                                                      |
 | per\_cpu | \<symbol-name\>            | 显示per\_cpu 变量的地址                                              |
 | ll       |                            | 链表遍历命令                                                         |
 
-## 注意
+
+### 使用说明
 
 * 进入`kdb`，此处显示的[0] 表示当前处于CPU0，可以通过`cpu` 命令切换
 
@@ -62,18 +76,14 @@
   >
   > 0xfffffff8139eec0 = 0xfffffff8139eec0 (schedule)
 
-* 进程状态
 
-  > * D = uninterruptible sleep
-  > * R = running
-  > * S = interruptible sleep
-  > * T = stopped
-  > * C = traced
-  > * Z = exited and zombied
-  > * E = exited and dead
-  > * U = unrunnable
-  > * I = idle
-  > * M = daemon
-  > * A = all
+## 附录
 
-* 
+### FAQ
+
+- kdb 与 kgdb 的区别？
+
+  kdb 调试时只有一台设备，直接在调试设备执行调试命令；
+  kgdb调试时需要有与设备链接的PC，在PC上运行GDB ，执行调试命令.
+
+

@@ -142,8 +142,8 @@
 ### kgdb&kdb
 
   - [kgdb](性能调试工具/kgdb/README.md)
-    - [环境搭建](性能调试工具/kgdb/环境搭建.md)
     - [kdb使用](性能调试工具/kgdb/kdb使用.md)
+    - [kgdb使用](性能调试工具/kgdb/kgdb使用.md)
 
 
 ### perf
