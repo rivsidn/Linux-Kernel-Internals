@@ -130,6 +130,28 @@
 
 - [调试&性能工具](性能调试工具/README.md)
 
+### kgdb&kdb
+
+  - [kgdb](性能调试工具/kgdb/README.md)
+    - [kdb使用](性能调试工具/kgdb/kdb使用.md)
+    - [kgdb使用](性能调试工具/kgdb/kgdb使用.md)
+
+### tracepoint
+
+  - [tracepoint](性能调试工具/tracepoint/README.md)
+
+### ftrace
+
+  - [ftrace](性能调试工具/ftrace/README.md)
+
+### kprobe
+
+  - [kprobe](性能调试工具/kprobe/README.md)
+    - [kprobe基本原理](性能调试工具/kprobe/kprobe基本原理.md)
+    - [kprobe使用](性能调试工具/kprobe/kprobe使用.md)
+
+### perf
+
 ### eBPF
 
   - [eBPF](性能调试工具/ebpf/README.md)
@@ -138,16 +160,6 @@
     - [BPF程序编译](性能调试工具/ebpf_22-12-28/BPF程序编译.md)
     - [BPF-MAP使用](性能调试工具/ebpf_22-12-28/BPF-MAP使用.md)
     - [BPF工具使用](性能调试工具/ebpf_22-12-28/BPF工具使用.md)
-
-### kgdb&kdb
-
-  - [kgdb](性能调试工具/kgdb/README.md)
-    - [kdb使用](性能调试工具/kgdb/kdb使用.md)
-    - [kgdb使用](性能调试工具/kgdb/kgdb使用.md)
-
-
-### perf
-
 
 
 ## 内核调试
