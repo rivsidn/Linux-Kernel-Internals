@@ -135,6 +135,11 @@
         - [会话查询](内核网络/netfilter/链接跟踪/netlink/会话查询.md)
       - [链接跟踪会话杂七杂八](内核网络/netfilter/链接跟踪/链接跟踪会话杂七杂八.md)
 
+### network performance
+
+  - [performance](内核网络/performance/README.md)
+    - [XPS内核实现](内核网络/performance/XPS内核实现.md)
+
 ## 调试&性能工具
 
 - [调试&性能工具](性能调试工具/README.md)
