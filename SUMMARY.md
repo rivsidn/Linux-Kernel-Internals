@@ -164,6 +164,11 @@
     - [kprobe基本原理](性能调试工具/kprobe/kprobe基本原理.md)
     - [kprobe使用](性能调试工具/kprobe/kprobe使用.md)
 
+### uprobe
+
+  - [uprobe](性能调试工具/uprobe/README.md)
+    - [uprobe基本原理](性能调试工具/uprobe/uprobe基本原理.md)
+
 ### perf
 
 
