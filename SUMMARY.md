@@ -139,6 +139,7 @@
 
   - [performance](内核网络/performance/README.md)
     - [XPS内核实现](内核网络/performance/XPS内核实现.md)
+    - [QDISC内核实现](内核网络/performance/QDISC内核实现.md)
 
 ## 调试&性能工具
 
@@ -157,6 +158,7 @@
 ### ftrace
 
   - [ftrace](性能调试工具/ftrace/README.md)
+    - [使用案例汇总](性能调试工具/ftrace/使用案例汇总.md)
 
 ### kprobe
 
