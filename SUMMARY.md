@@ -58,6 +58,11 @@
   - [proc文件系统](文件系统/proc文件系统/README.md)
     - [常用接口](文件系统/proc文件系统/常用接口.md)
 
+### FUSE(Filesystem in Userspace)
+
+
+
+
 ## 内存管理
 
 - [内存管理](mm/README.md)
@@ -232,5 +237,6 @@
  
 ## 其他
 
-- [其他](miscs/README.md)
+- [其他](其他/README.md)
+  - [内核休眠机制](其他/内核休眠机制.md)
 
