@@ -140,6 +140,13 @@
         - [会话查询](内核网络/netfilter/链接跟踪/netlink/会话查询.md)
       - [链接跟踪会话杂七杂八](内核网络/netfilter/链接跟踪/链接跟踪会话杂七杂八.md)
 
+
+### net sched
+
+  - [sched](内核网络/sched/README.md)
+    - [Qdisc学习](内核网络/sched/Qdisc学习.md)
+
+
 ### network performance
 
   - [performance](内核网络/performance/README.md)
