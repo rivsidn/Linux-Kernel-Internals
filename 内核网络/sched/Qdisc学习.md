@@ -1,6 +1,28 @@
 
+**分析基于 4.19.190 内核.**
 
-rtnl_register(PF_UNSPEC, RTM_NEWQDISC, tc_modify_qdisc, ...) (net/sched/sch_api.c:2173)
+## 初始化
+
+`net/sched/sch_api.c:pktsched_init()` 函数中初始化。
+
+
+## Qdisc 添加
+
+`tc_modify_qdisc()` 中添加Qdisc。
+
+
+
+## 情景分析 - pfifo 添加
+
+### 用户命令
+
+```bash
+tc qdisc add dev eth0 root pfifo limit 100
+```
+
+### 内核接口
+
+rtnl_register(PF_UNSPEC, RTM_NEWQDISC, tc_modify_qdisc, ...) (net/sched/sch_api.c)
 
 所以这条命令的内核处理函数是：
 
@@ -18,7 +40,9 @@ tc_modify_qdisc() (net/sched/sch_api.c:1412)
 ───────────  ────────────────────────────────────────────────────
  limit 100    TCA_OPTIONS = struct tc_fifo_qopt { .limit = 100 }
 ───────────  ────────────────────────────────────────────────────
- add          RTM_NEWQDISC，并带 `NLM_F_CREATE
+ add          RTM_NEWQDISC，并带 NLM_F_CREATE
+
+### 内核调用路径
 
 内核处理路径：
 
@@ -42,8 +66,7 @@ tc qdisc add dev eth0 root pfifo limit 100
 • fifo_init() (net/sched/sch_fifo.c:58)：从 struct tc_fifo_qopt 取出 limit=100，赋给 sch->limit。
 • pfifo_enqueue() (net/sched/sch_fifo.c:31)：队列中不足 100 个报文则入队，否则丢弃新报文。
 
-
-
-补充一点：对于多 TX 队列网卡，root pfifo 的 graft 分支会遍历所有 dev->num_tx_queues，将这个 root Qdisc 关联到各 TX 队列，而不是只处理 dev->_tx[0]，
+对于多 TX 队列网卡，root pfifo 的 graft 分支会遍历所有 dev->num_tx_queues，将这个 root Qdisc 关联到各 TX 队列，而不是只处理 dev->_tx[0]，
 见 qdisc_graft() (net/sched/sch_api.c:967)。
+
 
