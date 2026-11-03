@@ -242,6 +242,12 @@
   - [QEMU内核调试环境-4.4.155](virtual_machine_trace/QEMU内核调试环境-4.4.155.md)
   - [gdb调试内核](virtual_machine_trace/gdb调试内核.md)
  
+
+## 漏洞分析
+
+- [漏洞分析](漏洞分析/README.md)
+  - [CVE-2026-98432](漏洞分析/CVE-2026-98432/CVE-2026-98432.md)
+
 ## 其他
 
 - [其他](其他/README.md)
