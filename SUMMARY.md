@@ -126,7 +126,6 @@
   - [macvlan源码分析](内核网络/macvlan源码分析.md)
   - [macvtap分析](内核网络/macvtap分析.md)
   - [synproxy源码分析](内核网络/synproxy源码分析.md)
-  - [xfrm分析](内核网络/xfrm分析.md)
   - [桥转发fdb表](内核网络/桥转发fdb表.md)
 
 ### netfilter
@@ -152,6 +151,11 @@
   - [performance](内核网络/performance/README.md)
     - [XPS内核实现](内核网络/performance/XPS内核实现.md)
     - [QDISC内核实现](内核网络/performance/QDISC内核实现.md)
+
+### XFRM
+
+  - [XFRM](内核网络/XFRM/README.md)
+    - [XFRM使用](内核网络/XFRM/XFRM使用.md)
 
 ## 调试&性能工具
 
