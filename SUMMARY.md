@@ -139,6 +139,9 @@
         - [会话查询](内核网络/netfilter/链接跟踪/netlink/会话查询.md)
       - [链接跟踪会话杂七杂八](内核网络/netfilter/链接跟踪/链接跟踪会话杂七杂八.md)
 
+    - [ipset应用示例](内核网络/netfilter/ipset/ipset应用示例.md)
+    - [ipset用法](内核网络/netfilter/ipset/ipset用法.md)
+    - [ipset内核实现](内核网络/netfilter/ipset/ipset内核实现.md)
 
 ### net sched
 
