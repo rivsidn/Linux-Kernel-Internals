@@ -35,6 +35,15 @@
   - [网卡驱动](内核驱动/网卡驱动/README.md)
     - [ice网卡驱动分析](内核驱动/网卡驱动/ice网卡驱动分析.md)
 
+## 内存管理
+
+- [内存管理](内存管理/README.md)
+
+### 内存调试
+
+  - [kmemleak](内存管理/内存调试/kmemleak/README.md)
+    - [kmemleak使用](内存管理/内存调试/kmemleak/kmemleak使用.md)
+
 
 ## 进程管理
 
